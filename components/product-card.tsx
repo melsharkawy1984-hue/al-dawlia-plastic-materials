@@ -1,0 +1,3 @@
+import type { Product } from "../lib/content";
+
+export function ProductCard({ product }: { product: Product }) { return <article className="group overflow-hidden rounded-2xl bg-white shadow-card"><div className="h-52 bg-cover bg-center transition duration-500 group-hover:scale-105" style={{ backgroundImage: `url('${product.image}')` }} /><div className="p-6"><h3 className="text-2xl font-semibold text-brand">{product.title}</h3><p className="mt-3 text-sm leading-6 text-slate-600">{product.description}</p><span className="mt-6 inline-block text-sm font-bold text-orange">Discover more →</span></div></article>; }

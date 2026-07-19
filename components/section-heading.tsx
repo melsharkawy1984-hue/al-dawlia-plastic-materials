@@ -1,0 +1,1 @@
+export function SectionHeading({ title, className = "", light = false }: { title: string; className?: string; light?: boolean }) { return <h2 className={`text-4xl font-semibold leading-tight sm:text-5xl ${light ? "text-white" : "text-brand"} ${className}`}>{title}</h2>; }
