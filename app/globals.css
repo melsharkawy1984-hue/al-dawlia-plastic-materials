@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: #10284b; background: #fff; font-family: "DM Sans", Arial, sans-serif; }
+h1, h2, h3 { font-family: "Outfit", Arial, sans-serif; }
+.font-arabic, .font-arabic h1, .font-arabic h2, .font-arabic h3 { font-family: "Tajawal", Arial, sans-serif; }
+.hero-lines { background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size: 52px 52px; }
+.section-kicker { color: #1675b9; font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+
+.hero-grid {
+  background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+}
+.orb { filter: blur(2px); animation: float 9s ease-in-out infinite; }
+.orb-delay { animation-delay: -4s; }
+@keyframes float { 50% { transform: translateY(-16px) translateX(8px); } }
+.line-accent::before { content: ""; display: inline-block; width: 36px; height: 3px; background: #b5d62a; margin-right: 12px; vertical-align: middle; }
