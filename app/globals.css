@@ -1,31 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; color: #0F3D66; background: #fff; font-family: "DM Sans", Arial, sans-serif; }
-h1, h2, h3 { font-family: "Outfit", Arial, sans-serif; }
-.font-arabic, .font-arabic h1, .font-arabic h2, .font-arabic h3 { font-family: "Tajawal", Arial, sans-serif; }
-.hero-lines { background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size: 52px 52px; }
-.eyebrow { color: #0F3D66; font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+/* =========================================================
+   Global
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #0f3d66;
+  background: #fff;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Outfit", Arial, sans-serif;
+}
+
+.font-arabic,
+.font-arabic h1,
+.font-arabic h2,
+.font-arabic h3 {
+  font-family: "Tajawal", Arial, sans-serif;
+}
+
+/* =========================================================
+   Hero
+========================================================= */
+
+.hero-lines {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.07) 1px,
+      transparent 1px);
+
+  background-size: 52px 52px;
+}
 
 .hero-grid {
-  background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(255, 255, 255, 0.055) 1px,
+      transparent 1px);
+
   background-size: 54px 54px;
 }
-.orb { filter: blur(2px); animation: float 9s ease-in-out infinite; }
-.orb-delay { animation-delay: -4s; }
-@keyframes float { 50% { transform: translateY(-16px) translateX(8px); } }
-.button-primary { display: inline-flex; align-items: center; gap: .6rem; border-radius: 999px; background: #F58220; padding: .9rem 1.45rem; font-size: .875rem; font-weight: 700; color: white; transition: all .2s ease; }
-.button-primary:hover { background: white; color: #0F3D66; transform: translateY(-2px); }
-.button-ghost { display: inline-flex; align-items: center; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: .9rem 1.45rem; font-size: .875rem; font-weight: 700; color: white; transition: all .2s ease; }
-.button-ghost:hover { background: white; color: #0F3D66; }
-.form-field { display: block; width: 100%; margin-top: .55rem; border: 1px solid #dbe5ec; border-radius: .75rem; padding: .8rem .9rem; outline: none; color: #0F3D66; transition: border-color .2s ease, box-shadow .2s ease; }
-.form-field:focus { border-color: #F58220; box-shadow: 0 0 0 3px rgba(245,130,32,.12); }
-.social { display: grid; height: 2rem; width: 2rem; place-items: center; border-radius: 999px; background: rgba(255,255,255,.1); font-size: .7rem; font-weight: 700; transition: background .2s ease; }
-.social:hover { background: #F58220; }
-.floating-whatsapp { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 60; display: flex; align-items: center; gap: .5rem; border-radius: 999px; background: #25D366; padding: .85rem 1.05rem; color: white; font-size: .8rem; font-weight: 700; box-shadow: 0 12px 28px rgba(12, 74, 42, .28); transition: transform .2s ease, box-shadow .2s ease; }
-.floating-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(12, 74, 42, .38); }
+
+.orb {
+  filter: blur(2px);
+  animation: float 9s ease-in-out infinite;
+}
+
+.orb-delay {
+  animation-delay: -4s;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-16px) translateX(8px);
+  }
+}
+
+/* =========================================================
+   Buttons
+========================================================= */
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  background: #f58220;
+  padding: 0.9rem 1.45rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button-primary:hover {
+  background: white;
+  color: #0f3d66;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.button-ghost {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  padding: 0.9rem 1.45rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button-ghost:hover {
+  background: white;
+  color: #0f3d66;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Forms
+========================================================= */
+
+.form-field {
+  display: block;
+  width: 100%;
+  margin-top: 0.55rem;
+  border: 1px solid #dbe5ec;
+  border-radius: 0.75rem;
+  padding: 0.8rem 0.9rem;
+  outline: none;
+  color: #0f3d66;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-field:focus {
+  border-color: #f58220;
+  box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.12);
+}
+
+/* =========================================================
+   Typography
+========================================================= */
+
+.eyebrow {
+  color: #0f3d66;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   Social
+========================================================= */
+
+.social {
+  display: grid;
+  height: 2rem;
+  width: 2rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.7rem;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.social:hover {
+  background: #f58220;
+}
+
+/* =========================================================
+   WhatsApp
+========================================================= */
+
+.floating-whatsapp {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 60;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  border-radius: 999px;
+  background: #25d366;
+
+  padding: 0.85rem 1.05rem;
+
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  box-shadow: 0 12px 28px rgba(12, 74, 42, 0.28);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(12, 74, 42, 0.38);
+}

@@ -1,6 +1,268 @@
 "use client";
-import { useState } from "react";
-import type { content, Locale, Route } from "../lib/content";
-import { MailIcon, PhoneIcon } from "./icons";
 
-export function SiteHeader({ locale, active, copy, href }: { locale: Locale; active: Route | "home"; copy: typeof content.en; href: (p: Route | "home", locale?: Locale) => string }) { const [open, setOpen] = useState(false); const routes: (Route | "home")[] = ["home", "about", "products", "production-lines", "quality", "gallery"]; const other: Locale = locale === "en" ? "ar" : "en"; return <header className="absolute inset-x-0 top-0 z-50"><div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10"><a href={href("home")} className="flex items-center gap-3 text-white"><span className="grid h-11 w-11 place-items-center rounded-xl bg-white font-bold text-brand">AD</span><span className="leading-none"><b className="block text-base tracking-wide">{copy.brand}</b><small className="mt-1 block text-[9px] font-bold tracking-[.16em] text-orange">{copy.tag}</small></span></a><nav className="hidden items-center gap-5 text-sm font-semibold text-white/85 xl:flex">{routes.map((item) => <a className={`transition hover:text-orange ${active === item ? "text-orange" : ""}`} href={href(item)} key={item}>{copy.nav[item]}</a>)}</nav><div className="hidden items-center gap-3 sm:flex"><a className="rounded-full border border-white/30 px-3 py-2 text-xs font-bold text-white" href={href(active, other)}>{locale === "en" ? "AR" : "EN"}</a><a className="rounded-full bg-orange px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white hover:text-brand" href={href("contact")}>{copy.nav.contact}</a></div><button className="rounded-lg border border-white/30 px-3 py-2 text-white sm:hidden" onClick={() => setOpen(!open)} aria-label="Toggle navigation">☰</button>{open && <nav className="absolute left-5 right-5 top-[76px] rounded-2xl bg-white p-5 shadow-2xl sm:hidden">{[...routes, "contact" as Route].map((item) => <a className="block border-b border-slate-100 py-3 font-semibold text-brand last:border-0" href={href(item)} onClick={() => setOpen(false)} key={item}>{copy.nav[item]}</a>)}<div className="mt-4 grid gap-2 rounded-xl bg-slate-50 p-3 text-xs font-semibold text-brand"><a className="flex items-center gap-2" href="tel:+201097513375"><PhoneIcon className="h-4 w-4 text-orange" />+20 109 751 3375</a><a className="flex items-center gap-2 break-all" href="mailto:info@aldawlia-plastic.com"><MailIcon className="h-4 w-4 shrink-0 text-orange" />info@aldawlia-plastic.com</a></div><a className="mt-3 block text-sm font-bold text-orange" href={href(active, other)}>{locale === "en" ? "العربية" : "English"}</a></nav>}</div></header>; }
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { usePathname, useSearchParams } from "next/navigation";
+
+export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const isArabic = pathname.startsWith("/ar");
+  const locale = isArabic ? "ar" : "en";
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
+  /*
+   * Remove the current locale from the URL.
+   *
+   * /en
+   * /ar
+   * /en/products
+   * /ar/products/pe-bags
+   */
+
+  const pathWithoutLocale =
+    pathname.replace(/^\/(en|ar)/, "") || "";
+
+  /*
+   * Switch language while keeping:
+   *
+   * - current page
+   * - current product
+   * - query parameters
+   */
+
+  const switchLocale = (targetLocale: "en" | "ar") => {
+    const query = searchParams.toString();
+
+    return `/${targetLocale}${pathWithoutLocale}${query ? `?${query}` : ""}`;
+  };
+
+  /*
+   * Navigation links
+   */
+
+  const links = [
+    {
+      title: isArabic ? "الرئيسية" : "Home",
+      href: `/${locale}`,
+    },
+    {
+      title: isArabic ? "عن الشركة" : "About",
+      href: `/${locale}#about`,
+    },
+    {
+      title: isArabic ? "المنتجات" : "Products",
+      href: `/${locale}/products`,
+    },
+    {
+      title: isArabic ? "خطوط الإنتاج" : "Production",
+      href: `/${locale}#production`,
+    },
+    {
+      title: isArabic ? "الجودة" : "Quality",
+      href: `/${locale}#quality`,
+    },
+    {
+      title: isArabic ? "التصدير" : "Export",
+      href: `/${locale}#export`,
+    },
+    {
+      title: isArabic ? "المعرض" : "Gallery",
+      href: `/${locale}#gallery`,
+    },
+  ];
+
+  return (
+    <header
+      dir={isArabic ? "rtl" : "ltr"}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled
+          ? "bg-white/95 py-4 shadow-xl backdrop-blur-md"
+          : "bg-transparent py-6"
+        }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+
+        {/* =========================
+                    LOGO
+                ========================= */}
+
+        <Link
+          href={`/${locale}`}
+          className="flex items-center gap-3"
+          onClick={() => setOpen(false)}
+        >
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-xl font-black text-white shadow-lg">
+            AD
+          </div>
+
+          <div>
+            <h2
+              className={`text-xl font-black transition ${scrolled
+                  ? "text-slate-900"
+                  : "text-white"
+                }`}
+            >
+              AL DAWLIA
+            </h2>
+
+            <p
+              className={`text-xs uppercase tracking-[0.35em] transition ${scrolled
+                  ? "text-orange-600"
+                  : "text-orange-300"
+                }`}
+            >
+              Plastic Materials
+            </p>
+          </div>
+        </Link>
+
+        {/* =========================
+                    DESKTOP MENU
+                ========================= */}
+
+        <nav className="hidden items-center gap-8 lg:flex">
+
+          {links.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`font-semibold transition duration-300 ${scrolled
+                  ? "text-slate-700 hover:text-orange-500"
+                  : "text-white hover:text-orange-300"
+                }`}
+            >
+              {item.title}
+            </Link>
+          ))}
+
+        </nav>
+
+        {/* =========================
+                    DESKTOP BUTTONS
+                ========================= */}
+
+        <div className="hidden items-center gap-4 lg:flex">
+
+          {/* Language */}
+
+          <Link
+            href={switchLocale(
+              isArabic ? "en" : "ar"
+            )}
+            className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${scrolled
+                ? "border-slate-300 text-slate-700 hover:border-orange-500 hover:text-orange-500"
+                : "border-white/40 text-white hover:bg-white hover:text-slate-900"
+              }`}
+          >
+            {isArabic ? "English" : "العربية"}
+          </Link>
+
+          {/* Quote */}
+
+          <Link
+            href={`/${locale}/request-quote`}
+            className="rounded-xl bg-orange-500 px-6 py-3 font-bold text-white transition hover:bg-orange-600"
+          >
+            {isArabic
+              ? "اطلب عرض سعر"
+              : "Request Quote"}
+          </Link>
+
+        </div>
+
+        {/* =========================
+                    MOBILE BUTTON
+                ========================= */}
+
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label={
+            isArabic
+              ? "فتح القائمة"
+              : "Open menu"
+          }
+          aria-expanded={open}
+          className={`lg:hidden transition ${scrolled
+              ? "text-slate-900"
+              : "text-white"
+            }`}
+        >
+          {open ? (
+            <X size={28} />
+          ) : (
+            <Menu size={28} />
+          )}
+        </button>
+
+      </div>
+
+      {/* =========================
+                MOBILE MENU
+            ========================= */}
+
+      {open && (
+        <div
+          className={`lg:hidden bg-white shadow-2xl ${isArabic
+              ? "text-right"
+              : "text-left"
+            }`}
+        >
+
+          {links.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="block border-b border-slate-100 px-6 py-4 font-semibold text-slate-700 transition hover:bg-slate-50"
+            >
+              {item.title}
+            </Link>
+          ))}
+
+          {/* Language */}
+
+          <Link
+            href={switchLocale(
+              isArabic ? "en" : "ar"
+            )}
+            onClick={() => setOpen(false)}
+            className="block border-b border-slate-100 px-6 py-4 font-bold text-orange-600"
+          >
+            {isArabic
+              ? "English"
+              : "العربية"}
+          </Link>
+
+          {/* Quote */}
+
+          <Link
+            href={`/${locale}/request-quote`}
+            onClick={() => setOpen(false)}
+            className="block px-6 py-5 font-bold text-orange-600"
+          >
+            {isArabic
+              ? "اطلب عرض سعر"
+              : "Request Quote"}
+          </Link>
+
+        </div>
+      )}
+    </header>
+  );
+}

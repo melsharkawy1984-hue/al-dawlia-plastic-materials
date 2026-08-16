@@ -1,7 +1,12 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+
   theme: {
     extend: {
       colors: {
@@ -12,14 +17,16 @@ const config: Config = {
         pale: "#f0f7fc",
         blue: "#1769aa",
         lime: "#b5d62a",
-        mist: "#eff5f8"
+        mist: "#eff5f8",
       },
+
       boxShadow: {
-        card: "0 16px 40px rgba(16, 40, 75, 0.10)"
-      }
-    }
+        card: "0 16px 40px rgba(16,40,75,.10)",
+      },
+    },
   },
-  plugins: []
+
+  plugins: [],
 };
 
 export default config;
