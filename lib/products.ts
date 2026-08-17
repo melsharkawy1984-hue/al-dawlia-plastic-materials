@@ -13,7 +13,7 @@ const productImages = {
         "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=1200&q=80",
 
     peFilmRolls:
-        "https://images.unsplash.com/photo-1581092919535-7146ff1a5901?auto=format&fit=crop&w=1200&q=80",
+        "/images/products/pe-film-rolls.webp",
 
     stretchFilm:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",

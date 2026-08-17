@@ -29,7 +29,10 @@ export default function Hero({ locale }: HeroProps) {
             <div className="absolute inset-0 bg-slate-950/70" />
 
             {/* Orange Glow */}
-            <div className="absolute right-0 top-0 h-[700px] w-[700px] rounded-full bg-orange-500/20 blur-[180px]" />
+            <div
+                className={`absolute top-0 h-[700px] w-[700px] rounded-full bg-orange-500/20 blur-[180px] ${isArabic ? "left-0" : "right-0"
+                    }`}
+            />
 
             {/* Grid */}
             <div className="hero-grid absolute inset-0 opacity-30" />
@@ -38,7 +41,7 @@ export default function Hero({ locale }: HeroProps) {
             <div className="relative z-20 flex h-full items-center">
                 <div className="mx-auto w-full max-w-7xl px-6">
                     <div
-                        className={`max-w-3xl rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-md md:p-12 ${isArabic ? "text-right" : "text-left"
+                        className={`max-w-3xl rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-md md:p-12 ${isArabic ? "ml-auto text-right" : "mr-auto text-left"
                             }`}
                     >
                         {/* Eyebrow */}
@@ -73,7 +76,10 @@ export default function Hero({ locale }: HeroProps) {
                         </p>
 
                         {/* Buttons */}
-                        <div className="mt-12 flex flex-wrap gap-5">
+                        <div
+                            className={`mt-12 flex flex-wrap gap-5 ${isArabic ? "justify-end" : "justify-start"
+                                }`}
+                        >
                             <Link
                                 href={`/${locale}/products`}
                                 className="button-primary"
@@ -124,7 +130,7 @@ export default function Hero({ locale }: HeroProps) {
             <div className="pointer-events-none absolute inset-0 z-10 hidden xl:block">
                 {/* Experience */}
                 <div
-                    className={`absolute top-40 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-16" : "right-16"
+                    className={`absolute top-40 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-16 right-auto" : "right-16 left-auto"
                         }`}
                 >
                     <p className="text-4xl font-black text-orange-400">
@@ -132,42 +138,33 @@ export default function Hero({ locale }: HeroProps) {
                     </p>
 
                     <p className="mt-2 text-sm uppercase tracking-widest text-slate-200">
-                        {isArabic ? "سنوات من الخبرة" : "Years Experience"}
+                        {isArabic
+                            ? "سنوات من الخبرة"
+                            : "Years Experience"}
                     </p>
                 </div>
 
                 {/* Export */}
                 <div
-                    className={`absolute bottom-36 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-24" : "right-24"
+                    className={`absolute bottom-36 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-24 right-auto" : "right-24 left-auto"
                         }`}
                 >
-                    <p className="mt-2 text-sm uppercase tracking-widest text-slate-200">
-                        {isArabic ? "دولة للتصدير" : "Export Countries"}
-                    </p>
-
                     <p className="text-4xl font-black text-orange-400">
                         {isArabic ? "+15" : "15+"}
+                    </p>
+
+                    <p className="mt-2 text-sm uppercase tracking-widest text-slate-200">
+                        {isArabic
+                            ? "دولة للتصدير"
+                            : "Export Countries"}
                     </p>
                 </div>
 
                 {/* ISO */}
                 <div
-                    className={`absolute top-1/2 -translate-y-1/2 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-40" : "right-40"
+                    className={`absolute top-1/2 -translate-y-1/2 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-40 right-auto" : "right-40 left-auto"
                         }`}
                 >
-                    <p className="text-4xl font-black text-orange-400">
-                        ISO
-                    </p>
-
-                    <p className="mt-2 text-sm uppercase tracking-widest text-slate-200">
-                        {isArabic
-                            ? "جودة وفق المعايير الدولية"
-                            : "Certified Quality"}
-                    </p>
-                </div>
-
-                {/* ISO */}
-                <div className="absolute right-40 top-1/2 -translate-y-1/2 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl">
                     <p className="text-4xl font-black text-orange-400">
                         ISO
                     </p>
