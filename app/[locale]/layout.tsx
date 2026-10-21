@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+import { SiteHeader } from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
+import { ReactNode, Suspense } from "react";
 
 type Props = {
     children: ReactNode;
@@ -21,7 +23,9 @@ export default async function LocaleLayout({
             lang={isArabic ? "ar" : "en"}
             className={isArabic ? "font-arabic" : ""}
         >
+            <Suspense fallback={null}><SiteHeader /></Suspense>
             {children}
+            <SiteFooter locale={isArabic ? "ar" : "en"} />
         </div>
     );
 }
