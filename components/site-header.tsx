@@ -20,12 +20,18 @@ export function SiteHeader() {
       setScrolled(window.scrollY > 60);
     };
 
+    onScroll();
     window.addEventListener("scroll", onScroll);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+    setScrolled(window.scrollY > 60);
+  }, [pathname]);
 
   /*
    * Remove the current locale from the URL.
@@ -64,7 +70,7 @@ export function SiteHeader() {
     },
     {
       title: isArabic ? "عن الشركة" : "About",
-      href: `/${locale}#about`,
+      href: `/${locale}/about`,
     },
     {
       title: isArabic ? "المنتجات" : "Products",
@@ -72,19 +78,19 @@ export function SiteHeader() {
     },
     {
       title: isArabic ? "خطوط الإنتاج" : "Production",
-      href: `/${locale}#production`,
+      href: `/${locale}/production-lines`,
     },
     {
       title: isArabic ? "الجودة" : "Quality",
-      href: `/${locale}#quality`,
+      href: `/${locale}/quality`,
     },
     {
       title: isArabic ? "التصدير" : "Export",
-      href: `/${locale}#export`,
+      href: `/${locale}/export`,
     },
     {
       title: isArabic ? "المعرض" : "Gallery",
-      href: `/${locale}#gallery`,
+      href: `/${locale}/gallery`,
     },
   ];
 
