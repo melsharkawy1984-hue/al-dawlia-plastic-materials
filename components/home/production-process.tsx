@@ -116,7 +116,7 @@ export default function ProductionProcess({
     return (
         <section
             id="process"
-            className={`overflow-hidden bg-white py-28 ${isArabic ? "font-arabic" : ""
+            className={`overflow-hidden bg-[#FCFCF7] py-28 ${isArabic ? "font-arabic" : ""
                 }`}
             dir={isArabic ? "rtl" : "ltr"}
         >
@@ -167,7 +167,7 @@ export default function ProductionProcess({
                     {/* Timeline Line */}
 
                     <div
-                        className={`absolute top-0 h-full w-[6px] rounded-full bg-gradient-to-b from-orange-400 via-orange-500 to-orange-300 shadow-[0_0_30px_rgba(249,115,22,.45)] lg:left-1/2 lg:-translate-x-1/2 ${isArabic
+                        className={`absolute top-0 h-full w-[6px] rounded-full bg-gradient-to-b from-orange-400 via-orange-500 to-orange-300 shadow-[0_0_30px_rgba(35,131,102,.45)] lg:left-1/2 lg:-translate-x-1/2 ${isArabic
                                 ? "right-6 lg:right-auto"
                                 : "left-6"
                             }`}
@@ -194,7 +194,7 @@ export default function ProductionProcess({
 
                                     <div className="flex-1">
 
-                                        <div className="group relative overflow-hidden rounded-[34px] border border-slate-200 bg-white p-8 shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(0,0,0,.18)]">
+                                        <div className="group relative overflow-hidden rounded-[34px] border border-slate-200 bg-[#FCFCF7] p-8 shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(0,0,0,.18)]">
 
                                             {/* Number */}
 
@@ -264,7 +264,7 @@ export default function ProductionProcess({
 
                                             <div className="absolute inset-0 animate-ping rounded-full bg-orange-400 opacity-30" />
 
-                                            <div className="relative h-8 w-8 rounded-full border-4 border-white bg-orange-500 shadow-[0_0_30px_rgba(249,115,22,.8)]" />
+                                            <div className="relative h-8 w-8 rounded-full border-4 border-white bg-orange-500 shadow-[0_0_30px_rgba(35,131,102,.8)]" />
 
                                         </div>
 

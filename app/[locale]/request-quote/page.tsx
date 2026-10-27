@@ -111,7 +111,7 @@ export default async function RequestQuotePage({
 
                     {/* Form */}
 
-                    <div className="rounded-3xl bg-white p-10 shadow-xl lg:col-span-2">
+                    <div className="rounded-3xl bg-[#FCFCF7] p-10 shadow-xl lg:col-span-2">
 
                         <form className="space-y-6">
 
@@ -180,7 +180,7 @@ export default async function RequestQuotePage({
 
                     <div className="space-y-6">
 
-                        <div className="rounded-3xl bg-white p-8 shadow-xl">
+                        <div className="rounded-3xl bg-[#FCFCF7] p-8 shadow-xl">
 
                             <h3 className="text-2xl font-bold text-slate-900">
                                 {t.contactInformation}
@@ -253,7 +253,7 @@ export default async function RequestQuotePage({
                                 href="https://wa.me/201097513375"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-8 inline-block rounded-xl bg-white px-6 py-4 font-bold text-orange-500"
+                                className="mt-8 inline-block rounded-xl bg-[#FCFCF7] px-6 py-4 font-bold text-orange-500"
                             >
                                 {t.whatsappButton}
                             </Link>

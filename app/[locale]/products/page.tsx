@@ -59,7 +59,7 @@ export default async function ProductsPage({ params }: Props) {
 
                         <article
                             key={product.slug}
-                            className="group overflow-hidden rounded-3xl bg-white shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl"
+                            className="group overflow-hidden rounded-3xl bg-[#FCFCF7] shadow-lg transition duration-300 hover:-translate-y-3 hover:shadow-2xl"
                         >
 
                             <div className="overflow-hidden">
@@ -122,7 +122,7 @@ export default async function ProductsPage({ params }: Props) {
 
                 <Link
                     href={`/${currentLocale}/request-quote`}
-                    className="mt-10 inline-block rounded-xl bg-white px-8 py-4 text-lg font-bold text-orange-600 transition hover:bg-slate-100"
+                    className="mt-10 inline-block rounded-xl bg-[#FCFCF7] px-8 py-4 text-lg font-bold text-orange-600 transition hover:bg-slate-100"
                 >
                     {isArabic
                         ? "اطلب عرض سعر"

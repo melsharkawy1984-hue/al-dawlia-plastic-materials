@@ -41,7 +41,7 @@ export default function Hero({ locale }: HeroProps) {
             <div className="relative z-20 flex h-full items-center">
                 <div className="mx-auto w-full max-w-7xl px-6">
                     <div
-                        className={`max-w-3xl rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-md md:p-12 ${isArabic ? "ml-auto text-right" : "mr-auto text-left"
+                        className={`max-w-3xl rounded-[32px] border border-white/10 bg-[#FCFCF7]/5 p-8 shadow-2xl backdrop-blur-md md:p-12 ${isArabic ? "ml-auto text-right" : "mr-auto text-left"
                             }`}
                     >
                         {/* Eyebrow */}
@@ -107,7 +107,7 @@ export default function Hero({ locale }: HeroProps) {
                             ? "انتقل إلى قسم عن الشركة"
                             : "Scroll to About"
                     }
-                    className="flex h-14 w-14 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-md transition hover:bg-orange-500"
+                    className="flex h-14 w-14 items-center justify-center rounded-full border border-white/30 bg-[#FCFCF7]/10 backdrop-blur-md transition hover:bg-orange-500"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@ export default function Hero({ locale }: HeroProps) {
             <div className="pointer-events-none absolute inset-0 z-10 hidden xl:block">
                 {/* Experience */}
                 <div
-                    className={`absolute top-40 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-16 right-auto" : "right-16 left-auto"
+                    className={`absolute top-40 rounded-3xl border border-white/10 bg-[#FCFCF7]/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-16 right-auto" : "right-16 left-auto"
                         }`}
                 >
                     <p className="text-4xl font-black text-orange-400">
@@ -146,7 +146,7 @@ export default function Hero({ locale }: HeroProps) {
 
                 {/* Export */}
                 <div
-                    className={`absolute bottom-36 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-24 right-auto" : "right-24 left-auto"
+                    className={`absolute bottom-36 rounded-3xl border border-white/10 bg-[#FCFCF7]/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-24 right-auto" : "right-24 left-auto"
                         }`}
                 >
                     <p className="text-4xl font-black text-orange-400">
@@ -162,7 +162,7 @@ export default function Hero({ locale }: HeroProps) {
 
                 {/* ISO */}
                 <div
-                    className={`absolute top-1/2 -translate-y-1/2 rounded-3xl border border-white/10 bg-white/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-40 right-auto" : "right-40 left-auto"
+                    className={`absolute top-1/2 -translate-y-1/2 rounded-3xl border border-white/10 bg-[#FCFCF7]/10 p-6 text-white shadow-2xl backdrop-blur-xl ${isArabic ? "left-40 right-auto" : "right-40 left-auto"
                         }`}
                 >
                     <p className="text-4xl font-black text-orange-400">

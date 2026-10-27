@@ -295,7 +295,7 @@ export default function Gallery({
                                 }
                                 className={`group inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-bold transition-all duration-300 ${active
                                         ? "border-orange-500 bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                                        : "border-slate-200 bg-white text-slate-700 hover:-translate-y-1 hover:border-orange-300 hover:text-orange-500 hover:shadow-lg"
+                                        : "border-slate-200 bg-[#FCFCF7] text-slate-700 hover:-translate-y-1 hover:border-orange-300 hover:text-orange-500 hover:shadow-lg"
                                     }`}
                             >
                                 <Icon
@@ -329,7 +329,7 @@ export default function Gallery({
                                 key={item.src}
                                 type="button"
                                 onClick={() => setIndex(i)}
-                                className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white text-left shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
+                                className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-[#FCFCF7] text-left shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
                             >
                                 {/* Image */}
 

@@ -33,7 +33,7 @@ export default function CTA({ locale }: Props) {
                             ? "/ar/request-quote"
                             : "/en/request-quote"
                     }
-                    className="mt-12 inline-block rounded-2xl bg-white px-10 py-5 text-lg font-bold text-orange-500 transition hover:scale-105"
+                    className="mt-12 inline-block rounded-2xl bg-[#FCFCF7] px-10 py-5 text-lg font-bold text-orange-500 transition hover:scale-105"
                 >
                     {isArabic
                         ? "اطلب عرض سعر مجاني"

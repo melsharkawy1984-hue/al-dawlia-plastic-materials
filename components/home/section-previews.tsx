@@ -26,10 +26,10 @@ export default function SectionPreviews({ locale }: { locale: Locale }) {
             key={section.slug}
             id={section.anchor}
             aria-labelledby={`${section.anchor}-title`}
-            className={`scroll-mt-24 border-t border-slate-100 py-12 md:py-16 ${index % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+            className={`scroll-mt-24 border-t border-slate-100 py-12 md:py-16 ${index % 2 === 0 ? "bg-[#FCFCF7]" : "bg-slate-50"}`}
           >
-            <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 md:grid-cols-2 md:gap-12 lg:gap-20">
-              <div>
+            <div data-aos="fade-up" data-aos-duration="550" className="mx-auto grid max-w-7xl items-center gap-8 px-6 md:grid-cols-2 md:gap-12 lg:gap-20">
+              <div className={index % 2 === 1 ? "md:order-2" : ""}>
                 <span aria-hidden="true" className="mb-5 block h-1 w-12 rounded-full bg-orange-500" />
                 <h2 id={`${section.anchor}-title`} className="text-3xl font-black leading-tight text-slate-900 md:text-4xl lg:text-5xl">
                   {section[locale].title}

@@ -53,7 +53,7 @@ export default async function SectionPage({ params }: Props) {
       <nav aria-label={isArabic ? "استكشف الأقسام الأخرى" : "Explore other sections"} className="border-t border-slate-200 bg-slate-50 py-10">
         <div className="mx-auto flex max-w-7xl flex-wrap gap-3 px-6">
           {sections.filter((other) => other.slug !== section).map((other) => (
-            <Link key={other.slug} href={`/${currentLocale}/${other.slug}`} className="rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-600 hover:text-orange-700">{other[currentLocale].title}</Link>
+            <Link key={other.slug} href={`/${currentLocale}/${other.slug}`} className="rounded-full border border-slate-200 bg-[#FCFCF7] px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-orange-600 hover:text-orange-700">{other[currentLocale].title}</Link>
           ))}
         </div>
       </nav>
