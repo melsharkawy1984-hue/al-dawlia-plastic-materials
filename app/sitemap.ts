@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
+import { sections } from "@/lib/sections";
+import { getProducts } from "@/lib/products";
 
-const baseUrl = "https://aldawlia-plastic.com";
-const pages = ["", "/about", "/products", "/production-lines", "/quality", "/export", "/gallery", "/request-quote", "/contact"];
-const products = ["pe-bags", "pe-film-rolls", "stretch-film", "shrink-film", "garbage-bags", "agricultural-film", "custom-packaging"];
+const baseUrl = "https://aldawliaplastic.com";
+const pages = ["", ...sections.map((section) => `/${section.slug}`), "/request-quote"];
+const products = getProducts("en").map((product) => product.slug);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["en", "ar"];

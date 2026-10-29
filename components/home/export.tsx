@@ -105,7 +105,7 @@ export default function ExportSection({ locale }: Props) {
                                 return (
                                     <div
                                         key={item.title}
-                                        className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
+                                        className="group rounded-2xl border border-slate-100 bg-[#FCFCF7] p-6 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
                                     >
 
                                         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 transition-all duration-300 group-hover:bg-orange-500">
@@ -134,7 +134,7 @@ export default function ExportSection({ locale }: Props) {
                         <div className="relative overflow-hidden rounded-[32px] shadow-2xl">
 
                             <img
-                                src="/images/factory/export.jpg"
+                                src="/images/products/stretch-film-illustration.png"
                                 alt={
                                     isArabic
                                         ? "تصدير منتجات الدولية"

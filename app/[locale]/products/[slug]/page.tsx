@@ -79,6 +79,7 @@ export default async function ProductDetails({ params }: Props) {
                         <h1 className="text-6xl font-black text-white">
                             {product.title}
                         </h1>
+<p className="mt-3 text-sm text-slate-300">{isArabic ? "صور المنتجات توضيحية ومُنشأة خصيصًا للموقع." : "Product images are illustrative and created for this website."}</p>
 
                         <p className="mt-8 text-xl leading-9 text-slate-300">
                             {product.description}
@@ -117,7 +118,7 @@ export default async function ProductDetails({ params }: Props) {
                 TECHNICAL SPECIFICATIONS
             ===================================================== */}
 
-            <section className="bg-white py-24">
+            <section className="bg-[#FCFCF7] py-24">
 
                 <div className="mx-auto max-w-7xl px-6">
 
@@ -205,7 +206,7 @@ export default async function ProductDetails({ params }: Props) {
 
                             <div
                                 key={item}
-                                className="rounded-3xl bg-white p-10 text-center shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                                className="rounded-3xl bg-[#FCFCF7] p-10 text-center shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
                             >
 
                                 <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-orange-100">
@@ -235,7 +236,7 @@ export default async function ProductDetails({ params }: Props) {
                 RELATED PRODUCTS
             ===================================================== */}
 
-            <section className="bg-white py-24">
+            <section className="bg-[#FCFCF7] py-24">
 
                 <div className="mx-auto max-w-7xl px-6">
 
@@ -262,7 +263,7 @@ export default async function ProductDetails({ params }: Props) {
                             <Link
                                 key={item.slug}
                                 href={`/${currentLocale}/products/${item.slug}`}
-                                className="group overflow-hidden rounded-3xl bg-white shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                                className="group overflow-hidden rounded-3xl bg-[#FCFCF7] shadow-xl transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
                             >
 
                                 <img

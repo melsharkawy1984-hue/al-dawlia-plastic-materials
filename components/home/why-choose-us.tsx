@@ -1,8 +1,8 @@
 import {
     ShieldCheck,
-    Factory,
-    Globe2,
-    Award,
+    Clock,
+    SlidersHorizontal,
+    BadgeDollarSign,
 } from "lucide-react";
 
 import { type Locale } from "@/lib/content";
@@ -12,51 +12,16 @@ type WhyChooseUsProps = {
 };
 
 const items = {
-    en: [
-        {
-            icon: ShieldCheck,
-            title: "Premium Quality",
-            text: "Manufactured using high-grade raw materials with strict quality control.",
-        },
-        {
-            icon: Factory,
-            title: "Modern Production",
-            text: "Advanced extrusion and converting lines ensure consistent performance.",
-        },
-        {
-            icon: Globe2,
-            title: "Worldwide Export",
-            text: "Supplying customers across the Middle East, Africa and Europe.",
-        },
-        {
-            icon: Award,
-            title: "Trusted Experience",
-            text: "Reliable manufacturing partner with customized packaging solutions.",
-        },
-    ],
-
-    ar: [
-        {
-            icon: ShieldCheck,
-            title: "جودة فائقة",
-            text: "نستخدم مواد خام عالية الجودة مع تطبيق أنظمة صارمة لمراقبة الجودة في جميع مراحل الإنتاج.",
-        },
-        {
-            icon: Factory,
-            title: "إنتاج متطور",
-            text: "خطوط بثق وتحويل متقدمة تضمن ثبات الجودة والأداء في جميع المنتجات.",
-        },
-        {
-            icon: Globe2,
-            title: "تصدير عالمي",
-            text: "نورد منتجاتنا للعملاء في الشرق الأوسط وأفريقيا وأوروبا والأسواق الدولية.",
-        },
-        {
-            icon: Award,
-            title: "خبرة موثوقة",
-            text: "شريك تصنيع موثوق يقدم حلول تغليف مخصصة وفقًا لمتطلبات كل عميل.",
-        },
-    ],
+ar: [
+{ icon: ShieldCheck, title: "ثبات الجودة", text: "لاحظنا وجود فجوة في السوق تتمثل في عدم ثبات جودة الخامات من مورد إلى آخر، أو حتى بين الطلبات المتكررة من المورد نفسه، مما قد يؤثر بشكل مباشر على جودة المنتج النهائي لشركات التعبئة والتغليف والمصانع الغذائية. ومن هنا، نحرص في شركة الدولية لصناعة البلاستيك على تقديم جودة ثابتة ومواصفات مؤكدة في كل طلب، لضمان ثبات جودة المنتج النهائي واستقرار عملية الإنتاج لدى عملائنا." },
+{ icon: Clock, title: "تسليم في الموعد المحدد لكل عميل", text: "نعلم أن موعد وصول الخامة جزء أساسي من استقرار إنتاجك والتزامك بمواعيد تسليم عملائك، لذلك نحرص على تسليم كل طلب في الموعد المتفق عليه، مع متابعة الطلب حتى وصوله. وبالنسبة لنا، العميل هو الأولوية، وأي تأخير نتحمل مسؤوليته ونعمل على التعامل معه لضمان استمرار أعمالك دون تعطّل." },
+{ icon: SlidersHorizontal, title: "مواصفات تناسب كل عميل", text: "ندرك أن لكل عميل متطلبات ومواصفات تختلف وفقًا لطبيعة منتجاته واحتياجاته الإنتاجية، لذلك نوفّر حلولًا مرنة يتم تصنيعها وفقًا للمواصفات المطلوبة لكل عميل، بما يشمل السُمك والعرض والأبعاد والمقاسات والمواصفات الفنية، لضمان توافق المنتج النهائي مع متطلبات كل عميل." },
+{ icon: BadgeDollarSign, title: "أسعار مناسبة", text: "ندرك أهمية التكلفة بالنسبة لعملائنا، لذلك نحرص على تقديم أسعار مناسبة وفقًا لاحتياجات كل عميل، مع مراعاة الكميات والمواصفات المطلوبة، بما يحقق أفضل قيمة ممكنة مع الحفاظ على مستوى الجودة والموثوقية." }],
+en: [
+{ icon: ShieldCheck, title: "Consistent Quality", text: "We identified a gap in the market: raw material quality can vary between suppliers and even between repeat orders from the same supplier. This can directly affect the finished products of packaging companies and food manufacturers. At AL DAWLIA, we focus on consistent quality and confirmed specifications in every order to support reliable finished products and stable production for our customers." },
+{ icon: Clock, title: "On-Time Delivery for Every Customer", text: "We know that raw material delivery is essential to stable production and meeting your own customer deadlines. We strive to deliver every order on the agreed date and follow it through to arrival. Our customers come first: we take responsibility for any delay and work to resolve it so your business can continue without disruption." },
+{ icon: SlidersHorizontal, title: "Specifications Tailored to Each Customer", text: "Every customer has different requirements depending on their products and production needs. We provide flexible solutions manufactured to your requested specifications, including thickness, width, dimensions, sizes and technical requirements, so the finished product meets your needs." },
+{ icon: BadgeDollarSign, title: "Competitive Pricing", text: "We understand the importance of cost. We offer pricing suited to each customer’s needs, taking quantities and specifications into account to deliver the best possible value while maintaining quality and reliability." }],
 };
 
 export default function WhyChooseUs({
@@ -69,7 +34,7 @@ export default function WhyChooseUs({
         <section
             data-aos="fade-right"
             id="why-us"
-            className={`bg-white py-24 ${isArabic ? "font-arabic" : ""
+            className={`bg-[#FCFCF7] py-24 ${isArabic ? "font-arabic" : ""
                 }`}
         >
             <div className="mx-auto max-w-7xl px-6">
@@ -86,19 +51,7 @@ export default function WhyChooseUs({
 
                     <h2 className="mt-4 text-5xl font-bold text-slate-900">
 
-                        {isArabic ? (
-                            <>
-                                نبني حلول تغليف عالية الجودة
-                                <br />
-                                للأسواق العالمية
-                            </>
-                        ) : (
-                            <>
-                                Building Quality Packaging
-                                <br />
-                                For Global Markets
-                            </>
-                        )}
+                        {isArabic ? "لماذا نحن الخيار الأفضل بالنسبة لمصنعك" : "Why We Are the Best Choice for Your Factory"}
 
                     </h2>
 
@@ -125,7 +78,7 @@ export default function WhyChooseUs({
 
                 {/* Cards */}
 
-                <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+                <div className="mt-20 grid gap-8 md:grid-cols-2">
 
                     {currentItems.map((item) => {
 
@@ -134,7 +87,7 @@ export default function WhyChooseUs({
                         return (
                             <div
                                 key={item.title}
-                                className="group rounded-3xl border border-slate-200 bg-white p-10 shadow-sm transition duration-500 hover:-translate-y-3 hover:border-orange-500 hover:shadow-2xl"
+                                className="group rounded-3xl border border-slate-200 bg-[#FCFCF7] p-10 shadow-sm transition duration-500 hover:-translate-y-3 hover:border-orange-500 hover:shadow-2xl"
                             >
 
                                 {/* Icon */}
@@ -153,7 +106,7 @@ export default function WhyChooseUs({
 
                                 {/* Description */}
 
-                                <p className="mt-4 leading-7 text-slate-600">
+                                <p className="mt-4 leading-8 text-slate-600">
                                     {item.text}
                                 </p>
 

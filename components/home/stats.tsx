@@ -77,7 +77,7 @@ export default function Stats({ locale }: StatsProps) {
         >
             <div className="mx-auto max-w-7xl px-6">
                 <div
-                    className={`grid grid-cols-2 overflow-hidden rounded-[32px] border border-white/40 bg-white/90 shadow-[0_25px_80px_rgba(0,0,0,0.12)] backdrop-blur-xl lg:grid-cols-4 ${isArabic ? "direction-rtl" : ""
+                    className={`grid grid-cols-2 overflow-hidden rounded-[32px] border border-white/40 bg-[#FCFCF7]/90 shadow-[0_25px_80px_rgba(0,0,0,0.12)] backdrop-blur-xl lg:grid-cols-4 ${isArabic ? "direction-rtl" : ""
                         }`}
                 >
                     {items.map((item, index) => (

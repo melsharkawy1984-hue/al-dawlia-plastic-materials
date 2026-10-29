@@ -221,7 +221,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
                                 <Phone className="mt-1 h-5 w-5 shrink-0 text-orange-400" />
 
                                 <span>
-                                    +20 109 751 31375
+                                    +2010975131375
                                 </span>
                             </a>
 
@@ -248,7 +248,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
                                 href="https://wa.me/2010975131375"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="rounded-full bg-white/10 p-3 transition hover:bg-orange-500"
+                                className="rounded-full bg-[#FCFCF7]/10 p-3 transition hover:bg-orange-500"
                                 aria-label="WhatsApp"
                                 title="WhatsApp"
                             >
@@ -268,7 +268,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
                                 href="https://maps.app.goo.gl/jnRiQL5pjmqWTBZAA"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="rounded-full bg-white/10 p-3 transition hover:bg-orange-500"
+                                className="rounded-full bg-[#FCFCF7]/10 p-3 transition hover:bg-orange-500"
                                 aria-label="Google Maps"
                                 title="Google Maps"
                             >

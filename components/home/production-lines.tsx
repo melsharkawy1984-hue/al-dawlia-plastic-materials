@@ -18,7 +18,7 @@ export default function ProductionLines({ locale }: Props) {
                 },
                 {
                     title: "بثق الفيلم البلاستيكي",
-                    image: "/images/factory/line-02.jpg",
+                    image: "/images/factory/machine-01.jpg",
                     description:
                         "تضمن تقنية البثق الإيطالية المتقدمة الحصول على سماكة موحدة وجودة عالية للمنتج النهائي.",
                 },
@@ -44,7 +44,7 @@ export default function ProductionLines({ locale }: Props) {
                 },
                 {
                     title: "Film Extrusion",
-                    image: "/images/factory/line-02.jpg",
+                    image: "/images/factory/machine-01.jpg",
                     description:
                         "Advanced Italian extrusion technology ensures uniform thickness and superior quality.",
                 },

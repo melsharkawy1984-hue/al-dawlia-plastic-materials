@@ -12,10 +12,14 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#10284b",
+        slate: { ...colors.slate, 50: "#F7F7F2", 100: "#EEEFE8", 900: "#12324F", 950: "#09263E" },
         brand: "#0F3D66",
         orange: {
-          ...colors.orange,
-          DEFAULT: "#F58220",
+          ...colors.emerald,
+          DEFAULT: "#18745B",
+          500: "#238366",
+          600: "#18745B",
+          700: "#125C49",
         },
         sky: "#69c8f2",
         pale: "#f0f7fc",

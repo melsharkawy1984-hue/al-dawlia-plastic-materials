@@ -9,17 +9,10 @@ export type Product = {
 };
 
 const productImages = {
-    peBags:
-        "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=1200&q=80",
-
-    peFilmRolls:
-        "/images/products/pe-film-rolls.webp",
-
-    stretchFilm:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-
-    shrinkFilm:
-        "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=80",
+ peBags: "/images/products/pe-bags-illustration.png",
+ peFilmRolls: "/images/products/pe-film-illustration.png",
+ stretchFilm: "/images/products/stretch-film-illustration.png",
+ shrinkFilm: "/images/products/shrink-film-illustration.png",
 };
 
 export const products: Record<"en" | "ar", Product[]> = {

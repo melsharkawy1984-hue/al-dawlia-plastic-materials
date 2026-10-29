@@ -56,7 +56,7 @@ export default function FeaturedProducts({
                         <Link
                             key={product.slug}
                             href={`/${locale}/products/${product.slug}`}
-                            className="group overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl"
+                            className="group overflow-hidden rounded-[30px] border border-slate-200 bg-[#FCFCF7] shadow-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl"
                         >
 
                             <div className="relative overflow-hidden">

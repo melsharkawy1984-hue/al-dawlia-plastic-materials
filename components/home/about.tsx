@@ -11,7 +11,7 @@ export default function About({ locale }: AboutProps) {
         <section
             id="about"
             data-aos="fade-up"
-            className={`bg-white py-28 ${isArabic ? "font-arabic" : ""}`}
+            className={`bg-[#FCFCF7] py-28 ${isArabic ? "font-arabic" : ""}`}
         >
             <div className="mx-auto max-w-7xl px-6">
 
@@ -60,54 +60,18 @@ export default function About({ locale }: AboutProps) {
 
                         <h2 className="mt-6 text-5xl font-extrabold leading-tight text-slate-900">
 
-                            {isArabic ? (
-                                <>
-                                    الشركة الرائدة في
-                                    <br />
-                                    حلول تغليف البولي إيثيلين
-                                </>
-                            ) : (
-                                <>
-                                    Premium Polyethylene
-                                    <br />
-                                    Packaging Manufacturer
-                                </>
-                            )}
+                            {isArabic ? "نبذة عن الدولية" : "About AL DAWLIA"}
 
                         </h2>
 
                         <p className="mt-8 text-lg leading-9 text-slate-600">
 
-                            {isArabic ? (
-                                <>
-                                    الدولية للمواد البلاستيكية هي إحدى الشركات
-                                    المصرية المتخصصة في تصنيع حلول تغليف البولي
-                                    إيثيلين للأسواق المحلية والدولية.
-                                    <br />
-                                    <br />
-                                    يعمل مصنعنا باستخدام تكنولوجيا بثق إيطالية
-                                    متقدمة لإنتاج أفلام وأكياس ورولات البولي
-                                    إيثيلين عالية الجودة، بالإضافة إلى حلول
-                                    التغليف الصناعية المصممة وفقًا لاحتياجات
-                                    العملاء.
-                                </>
-                            ) : (
-                                <>
-                                    AL DAWLIA FOR PLASTIC MATERIALS is one of
-                                    Egypt's leading manufacturers of polyethylene
-                                    packaging solutions.
-                                    <br />
-                                    <br />
-                                    Our factory operates advanced Italian extrusion
-                                    technology capable of producing high-quality PE
-                                    film, bags, rolls and customized industrial
-                                    packaging for local and international markets.
-                                </>
-                            )}
+                            {isArabic ? "نقدّم لعملائنا من المصانع الغذائية وشركات التعبئة والتغليف حلولًا من مواد البولي إيثيلين، مستندين إلى خبرة تمتد لعشر سنوات في صناعة المواد البلاستيكية، بالاعتماد على أحدث التقنيات الإيطالية والالتزام بمعايير صارمة للجودة. كما أنشأنا مصنعنا وخطوط إنتاجنا الخاصة، لتصبح عمليات التصنيع تحت إدارتنا وإشرافنا المباشر. ومع تزايد عدد عملائنا، نواصل النمو والتوسع لتلبية احتياجات السوق." : "We provide food manufacturers and packaging companies with polyethylene material solutions, drawing on ten years of experience in plastics manufacturing, advanced Italian technology and strict quality standards. We have established our own factory and production lines, bringing manufacturing under our direct management and supervision. As our customer base grows, we continue to expand to meet market needs."}
 
                         </p>
 
-                        {/* Statistics */}
+                        <div className="mt-8 rounded-2xl border border-orange-100 bg-orange-50 p-6"><h3 className="text-2xl font-bold text-slate-900">{isArabic ? "رؤيتنا" : "Our Vision"}</h3><p className="mt-4 text-lg leading-9 text-slate-600">{isArabic ? "أن تصبح الدولية الشركة الرائدة في مجال Flexible Packaging، مع التوسع مستقبلًا في العديد من المجالات الأخرى، وبناء حضور قوي في الأسواق المستهدفة، مع الاهتمام دائمًا باحتياجات العميل وتقديم حلول مبتكرة تناسب احتياجات عملائه." : "Our vision is to become a leading company in flexible packaging, expand into other fields in the future and build a strong presence in our target markets, while always focusing on our customers and delivering innovative solutions that meet the needs of their own customers."}</p></div>
+{/* Statistics */}
 
                         <div className="mt-12 grid grid-cols-2 gap-8">
 

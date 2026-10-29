@@ -24,112 +24,7 @@ type GalleryItem = {
     category: "factory" | "products";
 };
 
-const galleryItems: GalleryItem[] = [
-    // =====================================================
-    // FACTORY & PRODUCTION
-    // =====================================================
-
-    {
-        src: "/images/factory/hero-machine.jpg",
-        title: "Production Line",
-        category: "factory",
-    },
-    {
-        src: "/images/factory/line-01.jpg",
-        title: "Film Extrusion Line",
-        category: "factory",
-    },
-    {
-        src: "/images/factory/line-02.jpg",
-        title: "Advanced Production Line",
-        category: "factory",
-    },
-    {
-        src: "/images/factory/machine-01.jpg",
-        title: "Industrial Machinery",
-        category: "factory",
-    },
-    {
-        src: "/images/factory/machine-02.jpg",
-        title: "Manufacturing Equipment",
-        category: "factory",
-    },
-    {
-        src: "/images/factory/export.jpg",
-        title: "Packaging & Export",
-        category: "factory",
-    },
-
-    // =====================================================
-    // PACKAGING PRODUCTS
-    // =====================================================
-
-    {
-        src: "/images/gallery/fb4f303c-b2ef-4428-b3c7-0faf6dea7ac7.JPG",
-        title: "Transparent Zip Bags",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/391cfded-b653-4c44-a79a-6313838a08a8.JPG",
-        title: "Stand-Up Packaging Pouches",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/04a54920-a57d-4d41-b8f9-b3aa6d15860a.JPG",
-        title: "Clear Food Packaging Bags",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/d6db9f61-a0e6-4a31-88e7-c5f9b289d978.JPG",
-        title: "Flexible Packaging Bags",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/359bacfd-862c-4431-ba21-b012adeb3852.JPG",
-        title: "Transparent Storage Bags",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/f0f8849d-cd2d-4aa8-94c3-5c961bed0db1.JPG",
-        title: "Custom Packaging Solutions",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/da2efd33-1658-40b3-9e9c-636cc3d02aea.JPG",
-        title: "Flexible Plastic Packaging",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/f24b27a5-280f-4394-93f5-6247d4856081.JPG",
-        title: "Zip Closure Bags",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/9ca19794-20e4-4cce-80e7-be27ef8bcf04.JPG",
-        title: "Clear Packaging Solutions",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/1a6bea5e-21a4-4e06-a5f4-f4846ef0a834.JPG",
-        title: "Polyethylene Packaging Bags",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/fcca2535-065a-4333-86d9-71d726fba22c.JPG",
-        title: "Food & Retail Packaging",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/3651d9b3-2446-4020-bfc4-2ac82067aca7.JPG",
-        title: "Custom Printed Packaging",
-        category: "products",
-    },
-    {
-        src: "/images/gallery/7bb3e776-919e-42bc-a6fd-b2c4e02b056c.JPG",
-        title: "Flexible Polyethylene Bags",
-        category: "products",
-    },
-];
+const galleryItems: GalleryItem[] = [{"src": "/images/factory/hero-machine.jpg", "title": "Production Line", "category": "factory"}, {"src": "/images/factory/line-01.jpg", "title": "Film Extrusion Line", "category": "factory"}, {"src": "/images/factory/machine-01.jpg", "title": "Industrial Machinery", "category": "factory"}, {"src": "/images/factory/machine-02.jpg", "title": "Manufacturing Equipment", "category": "factory"}, {"src": "/images/products/pe-bags-illustration.png", "title": "Polyethylene Bags", "category": "products"}, {"src": "/images/products/pe-film-illustration.png", "title": "PE Film Rolls", "category": "products"}, {"src": "/images/products/stretch-film-illustration.png", "title": "Stretch Film", "category": "products"}, {"src": "/images/products/shrink-film-illustration.png", "title": "Shrink Film", "category": "products"}];
 
 const filters = [
     {
@@ -164,7 +59,7 @@ const translations = {
         title: "Factory, Production",
         titleAccent: "& Packaging",
         description:
-            "Explore our manufacturing capabilities, production environment and flexible polyethylene packaging solutions.",
+            "Explore our factory equipment and illustrative product images created for AL DAWLIA.",
         factory: "Factory",
         packaging: "Packaging",
         statement: "Quality • Flexibility • Reliability • Global Reach",
@@ -175,7 +70,7 @@ const translations = {
         title: "المصنع والإنتاج",
         titleAccent: "والتغليف",
         description:
-            "اكتشف إمكانياتنا التصنيعية وبيئة الإنتاج وحلول التغليف المرنة المصنوعة من البولي إيثيلين.",
+            "شاهد معدات المصنع وصورًا توضيحية للمنتجات أُعدّت خصيصًا للدولية.",
         factory: "المصنع",
         packaging: "التغليف",
         statement: "الجودة • المرونة • الموثوقية • الوصول العالمي",
@@ -183,6 +78,10 @@ const translations = {
 };
 
 const arabicTitles: Record<string, string> = {
+"Polyethylene Bags": "أكياس البولي إيثيلين — صورة توضيحية",
+"PE Film Rolls": "رولات البولي إيثيلين — صورة توضيحية",
+"Stretch Film": "استرتش فيلم — صورة توضيحية",
+"Shrink Film": "شرنك فيلم — صورة توضيحية",
     "Production Line": "خط الإنتاج",
     "Film Extrusion Line": "خط بثق الأفلام",
     "Advanced Production Line": "خط إنتاج متطور",
@@ -295,7 +194,7 @@ export default function Gallery({
                                 }
                                 className={`group inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-bold transition-all duration-300 ${active
                                         ? "border-orange-500 bg-orange-500 text-white shadow-lg shadow-orange-500/20"
-                                        : "border-slate-200 bg-white text-slate-700 hover:-translate-y-1 hover:border-orange-300 hover:text-orange-500 hover:shadow-lg"
+                                        : "border-slate-200 bg-[#FCFCF7] text-slate-700 hover:-translate-y-1 hover:border-orange-300 hover:text-orange-500 hover:shadow-lg"
                                     }`}
                             >
                                 <Icon
@@ -329,7 +228,7 @@ export default function Gallery({
                                 key={item.src}
                                 type="button"
                                 onClick={() => setIndex(i)}
-                                className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white text-left shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
+                                className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-[#FCFCF7] text-left shadow-lg transition-all duration-500 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
                             >
                                 {/* Image */}
 

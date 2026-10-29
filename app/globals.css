@@ -19,7 +19,7 @@ html {
 body {
   margin: 0;
   color: #0f3d66;
-  background: #fff;
+  background: #FCFCF7;
   font-family: "DM Sans", Arial, sans-serif;
 }
 
@@ -86,7 +86,7 @@ h3 {
   align-items: center;
   gap: 0.6rem;
   border-radius: 999px;
-  background: #f58220;
+  background: #18745b;
   padding: 0.9rem 1.45rem;
   font-size: 0.875rem;
   font-weight: 700;
@@ -145,8 +145,8 @@ h3 {
 }
 
 .form-field:focus {
-  border-color: #f58220;
-  box-shadow: 0 0 0 3px rgba(245, 130, 32, 0.12);
+  border-color: #18745b;
+  box-shadow: 0 0 0 3px rgba(24, 116, 91, 0.12);
 }
 
 /* =========================================================
@@ -178,7 +178,7 @@ h3 {
 }
 
 .social:hover {
-  background: #f58220;
+  background: #18745b;
 }
 
 /* =========================================================
@@ -214,4 +214,9 @@ h3 {
 .floating-whatsapp:hover {
   transform: translateY(-3px);
   box-shadow: 0 16px 32px rgba(12, 74, 42, 0.38);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-aos] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

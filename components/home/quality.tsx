@@ -151,7 +151,7 @@ export default function Quality({ locale }: Props) {
                     data-aos-delay="100"
                     className="mx-auto mt-16 max-w-5xl"
                 >
-                    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.06] p-8 shadow-2xl backdrop-blur-xl md:p-10">
+                    <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[#FCFCF7]/[0.06] p-8 shadow-2xl backdrop-blur-xl md:p-10">
 
                         <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-orange-500/10 blur-[100px]" />
 
@@ -160,7 +160,7 @@ export default function Quality({ locale }: Props) {
                                 }`}
                         >
 
-                            <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-orange-500 text-white shadow-[0_0_40px_rgba(249,115,22,.35)]">
+                            <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-orange-500 text-white shadow-[0_0_40px_rgba(35,131,102,.35)]">
                                 <Award size={48} strokeWidth={1.8} />
                             </div>
 
@@ -217,7 +217,7 @@ export default function Quality({ locale }: Props) {
                                 key={item.title}
                                 data-aos="fade-up"
                                 data-aos-delay={index * 80}
-                                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.05] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-orange-400/30 hover:bg-white/[0.09] hover:shadow-[0_25px_70px_rgba(0,0,0,.35)]"
+                                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[#FCFCF7]/[0.05] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-orange-400/30 hover:bg-[#FCFCF7]/[0.09] hover:shadow-[0_25px_70px_rgba(0,0,0,.35)]"
                             >
 
                                 {/* Glow */}
@@ -226,7 +226,7 @@ export default function Quality({ locale }: Props) {
 
                                 {/* Icon */}
 
-                                <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-400 transition-all duration-500 group-hover:bg-orange-500 group-hover:text-white group-hover:shadow-[0_0_30px_rgba(249,115,22,.4)]">
+                                <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-400 transition-all duration-500 group-hover:bg-orange-500 group-hover:text-white group-hover:shadow-[0_0_30px_rgba(35,131,102,.4)]">
                                     <Icon size={30} strokeWidth={1.8} />
                                 </div>
 

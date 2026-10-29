@@ -20,12 +20,18 @@ export function SiteHeader() {
       setScrolled(window.scrollY > 60);
     };
 
+    onScroll();
     window.addEventListener("scroll", onScroll);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+    setScrolled(window.scrollY > 60);
+  }, [pathname]);
 
   /*
    * Remove the current locale from the URL.
@@ -64,7 +70,7 @@ export function SiteHeader() {
     },
     {
       title: isArabic ? "عن الشركة" : "About",
-      href: `/${locale}#about`,
+      href: `/${locale}/about`,
     },
     {
       title: isArabic ? "المنتجات" : "Products",
@@ -72,19 +78,19 @@ export function SiteHeader() {
     },
     {
       title: isArabic ? "خطوط الإنتاج" : "Production",
-      href: `/${locale}#production`,
+      href: `/${locale}/production-lines`,
     },
     {
       title: isArabic ? "الجودة" : "Quality",
-      href: `/${locale}#quality`,
+      href: `/${locale}/quality`,
     },
     {
       title: isArabic ? "التصدير" : "Export",
-      href: `/${locale}#export`,
+      href: `/${locale}/export`,
     },
     {
       title: isArabic ? "المعرض" : "Gallery",
-      href: `/${locale}#gallery`,
+      href: `/${locale}/gallery`,
     },
   ];
 
@@ -92,7 +98,7 @@ export function SiteHeader() {
     <header
       dir={isArabic ? "rtl" : "ltr"}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-white/95 py-4 shadow-xl backdrop-blur-md"
+          ? "bg-[#FCFCF7]/95 py-4 shadow-xl backdrop-blur-md"
           : "bg-transparent py-6"
         }`}
     >
@@ -167,7 +173,7 @@ export function SiteHeader() {
             )}
             className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${scrolled
                 ? "border-slate-300 text-slate-700 hover:border-orange-500 hover:text-orange-500"
-                : "border-white/40 text-white hover:bg-white hover:text-slate-900"
+                : "border-white/40 text-white hover:bg-[#FCFCF7] hover:text-slate-900"
               }`}
           >
             {isArabic ? "English" : "العربية"}
@@ -218,7 +224,7 @@ export function SiteHeader() {
 
       {open && (
         <div
-          className={`lg:hidden bg-white shadow-2xl ${isArabic
+          className={`lg:hidden bg-[#FCFCF7] shadow-2xl ${isArabic
               ? "text-right"
               : "text-left"
             }`}
