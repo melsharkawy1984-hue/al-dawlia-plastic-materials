@@ -1,3 +1,4 @@
+import VisitSource from "@/components/visit-source";
 import { SiteHeader } from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 import { ReactNode, Suspense } from "react";
@@ -24,6 +25,7 @@ export default async function LocaleLayout({
             className={isArabic ? "font-arabic" : ""}
         >
             <Suspense fallback={null}><SiteHeader /></Suspense>
+            <VisitSource />
             {children}
             <SiteFooter locale={isArabic ? "ar" : "en"} />
         </div>

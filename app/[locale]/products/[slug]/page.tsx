@@ -79,6 +79,7 @@ export default async function ProductDetails({ params }: Props) {
                         <h1 className="text-6xl font-black text-white">
                             {product.title}
                         </h1>
+<p className="mt-3 text-sm text-slate-300">{isArabic ? "صور المنتجات توضيحية ومُنشأة خصيصًا للموقع." : "Product images are illustrative and created for this website."}</p>
 
                         <p className="mt-8 text-xl leading-9 text-slate-300">
                             {product.description}

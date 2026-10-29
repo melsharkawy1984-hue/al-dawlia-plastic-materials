@@ -1,3 +1,4 @@
+import ContactForm from "@/components/contact-form";
 import Link from "next/link";
 import type { Locale } from "@/lib/content";
 
@@ -113,66 +114,7 @@ export default async function RequestQuotePage({
 
                     <div className="rounded-3xl bg-[#FCFCF7] p-10 shadow-xl lg:col-span-2">
 
-                        <form className="space-y-6">
-
-                            <div className="grid gap-6 md:grid-cols-2">
-
-                                <input
-                                    className="form-field"
-                                    placeholder={t.company}
-                                />
-
-                                <input
-                                    className="form-field"
-                                    placeholder={t.contactPerson}
-                                />
-
-                            </div>
-
-                            <div className="grid gap-6 md:grid-cols-2">
-
-                                <input
-                                    className="form-field"
-                                    placeholder={t.email}
-                                    type="email"
-                                />
-
-                                <input
-                                    className="form-field"
-                                    placeholder={t.phone}
-                                />
-
-                            </div>
-
-                            <input
-                                className="form-field"
-                                placeholder={t.country}
-                            />
-
-                            <input
-                                className="form-field"
-                                defaultValue={product || ""}
-                                placeholder={t.product}
-                            />
-
-                            <input
-                                className="form-field"
-                                placeholder={t.quantity}
-                            />
-
-                            <textarea
-                                className="form-field min-h-[180px]"
-                                placeholder={t.message}
-                            />
-
-                            <button
-                                className="button-primary"
-                                type="submit"
-                            >
-                                {t.send}
-                            </button>
-
-                        </form>
+                        <ContactForm locale={currentLocale} product={product} />
 
                     </div>
 
@@ -210,10 +152,11 @@ export default async function RequestQuotePage({
                                     </p>
 
                                     <a
-                                        href="tel:+201097513375"
+                                        href="https://wa.me/2010975131375"
+                                        dir="ltr"
                                         className="mt-2 block font-semibold text-slate-700"
                                     >
-                                        +20 109 751 3375
+                                        +2010975131375
                                     </a>
 
                                 </div>
@@ -225,7 +168,7 @@ export default async function RequestQuotePage({
                                     </p>
 
                                     <a
-                                        href="https://wa.me/201097513375"
+                                        href="https://wa.me/2010975131375"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-2 block font-semibold text-green-600"
@@ -250,7 +193,7 @@ export default async function RequestQuotePage({
                             </p>
 
                             <Link
-                                href="https://wa.me/201097513375"
+                                href="https://wa.me/2010975131375"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-8 inline-block rounded-xl bg-[#FCFCF7] px-6 py-4 font-bold text-orange-500"

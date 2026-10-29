@@ -221,7 +221,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
                                 <Phone className="mt-1 h-5 w-5 shrink-0 text-orange-400" />
 
                                 <span>
-                                    +20 109 751 31375
+                                    +2010975131375
                                 </span>
                             </a>
 

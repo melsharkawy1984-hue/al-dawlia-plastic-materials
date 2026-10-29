@@ -37,6 +37,7 @@ export default async function ProductsPage({ params }: Props) {
                     <h1 className="mt-6 text-6xl font-extrabold">
                         {isArabic ? "منتجاتنا" : "Our Products"}
                     </h1>
+<p className="mt-3 text-sm text-slate-300">{isArabic ? "صور المنتجات توضيحية ومُنشأة خصيصًا للموقع." : "Product images are illustrative and created for this website."}</p>
 
                     <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
                         {isArabic

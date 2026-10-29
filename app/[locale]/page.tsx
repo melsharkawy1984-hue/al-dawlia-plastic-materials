@@ -1,3 +1,4 @@
+import MissionValues from "@/components/home/mission-values";
 import SectionPreviews from "@/components/home/section-previews";
 import Hero from "@/components/home/hero";
 import Stats from "@/components/home/stats";
@@ -28,6 +29,8 @@ export default async function HomePage({ params }: Props) {
             <Stats locale={currentLocale} />
 
             <SectionPreviews locale={currentLocale} />
+
+            <MissionValues locale={currentLocale} />
 
             <CTA locale={currentLocale} />
 

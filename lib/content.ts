@@ -5,13 +5,13 @@ export type Locale = "en" | "ar";
 export type Product = { title: string; description: string; image: string };
 
 const images = {
-  hero: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2200&q=90",
-  rolls: "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&w=1200&q=85",
-  line: "https://images.unsplash.com/photo-1581092919535-7146ff1a5901?auto=format&fit=crop&w=1200&q=85",
-  warehouse: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85",
-  lab: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-  logistics: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=85",
-  factory: "https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=1200&q=85",
+  hero: "/images/factory/hero-machine.jpg",
+  rolls: "/images/products/pe-film-illustration.png",
+  line: "/images/factory/line-01.jpg",
+  warehouse: "/images/products/stretch-film-illustration.png",
+  lab: "/images/products/raw-material-illustration.png",
+  logistics: "/images/products/stretch-film-illustration.png",
+  factory: "/images/factory/machine-01.jpg",
 };
 
 type Copy = {

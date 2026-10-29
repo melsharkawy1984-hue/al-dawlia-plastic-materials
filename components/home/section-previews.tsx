@@ -6,12 +6,12 @@ import { sections } from "@/lib/sections";
 const images: Record<typeof sections[number]["slug"], { src: string; ar: string; en: string }> = {
   about: { src: "/images/factory/hero-machine.jpg", ar: "مصنع الدولية للمواد البلاستيكية", en: "AL DAWLIA plastic materials factory" },
   "why-choose-us": { src: "/images/factory/machine-01.jpg", ar: "معدات تصنيع الدولية", en: "AL DAWLIA manufacturing equipment" },
-  products: { src: "/images/products/pe-film-rolls.webp", ar: "رولات فيلم البولي إيثيلين", en: "Polyethylene film rolls" },
+  products: { src: "/images/products/pe-film-illustration.png", ar: "رولات فيلم البولي إيثيلين", en: "Polyethylene film rolls" },
   "production-process": { src: "/images/process/extrusion.jpg", ar: "مرحلة بثق أفلام البولي إيثيلين", en: "Polyethylene film extrusion" },
   "production-lines": { src: "/images/factory/line-01.jpg", ar: "خط إنتاج داخل مصنع الدولية", en: "Production line at AL DAWLIA" },
-  quality: { src: "/images/process/packing.jpg", ar: "تجهيز وتعبئة المنتجات", en: "Product preparation and packing" },
-  export: { src: "/images/factory/export.jpg", ar: "تجهيز المنتجات للتصدير", en: "Products prepared for export" },
-  gallery: { src: "/images/factory/line-02.jpg", ar: "من داخل مصنع الدولية", en: "Inside the AL DAWLIA factory" },
+  quality: { src: "/images/products/shrink-film-illustration.png", ar: "تجهيز وتعبئة المنتجات", en: "Product preparation and packing" },
+  export: { src: "/images/products/stretch-film-illustration.png", ar: "تجهيز المنتجات للتصدير", en: "Products prepared for export" },
+  gallery: { src: "/images/factory/machine-01.jpg", ar: "من داخل مصنع الدولية", en: "Inside the AL DAWLIA factory" },
 };
 
 export default function SectionPreviews({ locale }: { locale: Locale }) {
@@ -55,6 +55,7 @@ export default function SectionPreviews({ locale }: { locale: Locale }) {
                   loading="lazy"
                   className="aspect-[3/2] w-full rounded-2xl object-cover"
                 />
+                {image.src.includes("illustration") && <p className="pt-2 text-center text-xs text-slate-600">{isArabic ? "صورة توضيحية للمنتج" : "Illustrative product image"}</p>}
               </div>
             </div>
           </section>

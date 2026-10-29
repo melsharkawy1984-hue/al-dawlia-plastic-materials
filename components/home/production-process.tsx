@@ -17,7 +17,7 @@ const steps = {
     en: [
         {
             icon: Package,
-            image: "/images/process/raw-material.jpg",
+            image: "/images/products/raw-material-illustration.png",
             title: "Raw Materials",
             description:
                 "Carefully selected premium polyethylene raw materials from trusted suppliers.",
@@ -39,21 +39,21 @@ const steps = {
         },
         {
             icon: Scissors,
-            image: "/images/process/cutting.jpg",
+            image: "/images/products/pe-film-illustration.png",
             title: "Cutting & Sealing",
             description:
                 "Precision cutting and sealing for customized product dimensions and specifications.",
         },
         {
             icon: Boxes,
-            image: "/images/process/packing.jpg",
+            image: "/images/products/shrink-film-illustration.png",
             title: "Packing",
             description:
                 "Every product is inspected and packed according to the required specifications and quality standards.",
         },
         {
             icon: Ship,
-            image: "/images/process/export.jpg",
+            image: "/images/products/stretch-film-illustration.png",
             title: "Worldwide Export",
             description:
                 "Reliable logistics and export solutions serving customers and markets around the world.",
@@ -63,7 +63,7 @@ const steps = {
     ar: [
         {
             icon: Package,
-            image: "/images/process/raw-material.jpg",
+            image: "/images/products/raw-material-illustration.png",
             title: "المواد الخام",
             description:
                 "مواد خام من البولي إيثيلين عالية الجودة يتم اختيارها بعناية من موردين موثوقين.",
@@ -85,21 +85,21 @@ const steps = {
         },
         {
             icon: Scissors,
-            image: "/images/process/cutting.jpg",
+            image: "/images/products/pe-film-illustration.png",
             title: "القص واللحام",
             description:
                 "عمليات قص ولحام دقيقة لإنتاج المنتجات وفقًا للأبعاد والمواصفات المطلوبة.",
         },
         {
             icon: Boxes,
-            image: "/images/process/packing.jpg",
+            image: "/images/products/shrink-film-illustration.png",
             title: "التعبئة والتغليف",
             description:
                 "يتم فحص كل منتج وتعبئته وفقًا للمواصفات المطلوبة ومعايير الجودة.",
         },
         {
             icon: Ship,
-            image: "/images/process/export.jpg",
+            image: "/images/products/stretch-film-illustration.png",
             title: "التصدير العالمي",
             description:
                 "حلول لوجستية وشحن موثوقة لخدمة العملاء والأسواق في مختلف أنحاء العالم.",
@@ -217,6 +217,7 @@ export default function ProductionProcess({
                                                     className="h-60 w-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                                                 />
 
+                                                {step.image.includes("illustration") && <span className="absolute bottom-2 start-2 rounded bg-slate-950/80 px-2 py-1 text-xs text-white">{isArabic ? "صورة توضيحية" : "Illustrative image"}</span>}
                                                 {/* Coming Soon */}
 
                                                 {step.comingSoon && (
