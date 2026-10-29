@@ -99,7 +99,7 @@ export default function Hero({ locale }: HeroProps) {
             </div>
 
             {/* Scroll Down */}
-            <div className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 animate-bounce">
+            <div className="absolute bottom-8 left-1/2 z-30 -translate-x-1/2 animate-bounce [animation-duration:2.5s] motion-reduce:animate-none">
                 <a
                     href="#about"
                     aria-label={
