@@ -53,7 +53,7 @@ const steps = {
         },
         {
             icon: Ship,
-            image: "/images/products/stretch-film-illustration.png",
+            image: "/images/products/stretch-hood-illustration.png",
             title: "Worldwide Export",
             description:
                 "Reliable logistics and export solutions serving customers and markets around the world.",
@@ -99,7 +99,7 @@ const steps = {
         },
         {
             icon: Ship,
-            image: "/images/products/stretch-film-illustration.png",
+            image: "/images/products/stretch-hood-illustration.png",
             title: "التصدير العالمي",
             description:
                 "حلول لوجستية وشحن موثوقة لخدمة العملاء والأسواق في مختلف أنحاء العالم.",

@@ -10,7 +10,7 @@ const images: Record<typeof sections[number]["slug"], { src: string; ar: string;
   "production-process": { src: "/images/process/extrusion.jpg", ar: "مرحلة بثق أفلام البولي إيثيلين", en: "Polyethylene film extrusion" },
   "production-lines": { src: "/images/factory/line-01.jpg", ar: "خط إنتاج داخل مصنع الدولية", en: "Production line at AL DAWLIA" },
   quality: { src: "/images/products/shrink-film-illustration.png", ar: "تجهيز وتعبئة المنتجات", en: "Product preparation and packing" },
-  export: { src: "/images/products/stretch-film-illustration.png", ar: "تجهيز المنتجات للتصدير", en: "Products prepared for export" },
+  export: { src: "/images/products/stretch-hood-illustration.png", ar: "تجهيز المنتجات للتصدير", en: "Products prepared for export" },
   gallery: { src: "/images/factory/machine-01.jpg", ar: "من داخل مصنع الدولية", en: "Inside the AL DAWLIA factory" },
 };
 
