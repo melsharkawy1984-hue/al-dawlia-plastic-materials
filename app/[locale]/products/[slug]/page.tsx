@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import Link from "next/link";
 import {
     getProduct,
@@ -21,6 +21,10 @@ export default async function ProductDetails({ params }: Props) {
         locale === "ar" ? "ar" : "en";
 
     const isArabic = currentLocale === "ar";
+
+    if (slug === "stretch-film") {
+        permanentRedirect(`/${currentLocale}/products/stretch-hood`);
+    }
 
     const product = getProduct(
         currentLocale,
@@ -79,7 +83,7 @@ export default async function ProductDetails({ params }: Props) {
                         <h1 className="text-6xl font-black text-white">
                             {product.title}
                         </h1>
-<p className="mt-3 text-sm text-slate-300">{isArabic ? "صور المنتجات توضيحية ومُنشأة خصيصًا للموقع." : "Product images are illustrative and created for this website."}</p>
+{product.imageKind !== "supplied" && <p className="mt-3 text-sm text-slate-300">{isArabic ? "صور المنتجات توضيحية ومُنشأة خصيصًا للموقع." : "Product images are illustrative and created for this website."}</p>}
 
                         <p className="mt-8 text-xl leading-9 text-slate-300">
                             {product.description}
@@ -138,38 +142,21 @@ export default async function ProductDetails({ params }: Props) {
 
                     </div>
 
-                    <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
-
-                        <table className="w-full">
-
-                            <tbody>
-
-                                {Object.entries(
-                                    product.specifications
-                                ).map(([key, value]) => (
-
-                                    <tr
-                                        key={key}
-                                        className="border-b last:border-b-0"
-                                    >
-
-                                        <td className="w-1/3 bg-slate-50 px-8 py-6 font-bold text-slate-800">
-                                            {key}
-                                        </td>
-
-                                        <td className="px-8 py-6 text-slate-600">
-                                            {value}
-                                        </td>
-
-                                    </tr>
-
-                                ))}
-
-                            </tbody>
-
-                        </table>
-
-                    </div>
+                    {(product.specificationGroups ?? [{ title: "", specifications: product.specifications }]).map((group, index) => (
+                        <div key={group.title || index} className="mb-10">
+                            {group.title && <h3 className="mb-5 text-2xl font-bold text-slate-900">{group.title}</h3>}
+                            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-xl">
+                                <table className="w-full table-fixed">
+                                    <tbody>{Object.entries(group.specifications).map(([key, value]) => (
+                                        <tr key={key} className="border-b last:border-b-0">
+                                            <th scope="row" className="w-2/5 bg-slate-50 px-4 py-5 text-start font-bold text-slate-800 md:px-8">{key}</th>
+                                            <td className="break-words px-4 py-5 text-slate-600 md:px-8">{value}</td>
+                                        </tr>
+                                    ))}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                    ))}
 
                 </div>
 

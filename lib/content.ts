@@ -8,9 +8,9 @@ const images = {
   hero: "/images/factory/hero-machine.jpg",
   rolls: "/images/products/pe-film-illustration.png",
   line: "/images/factory/line-01.jpg",
-  warehouse: "/images/products/stretch-film-illustration.png",
+  warehouse: "/images/products/stretch-hood-illustration.png",
   lab: "/images/products/raw-material-illustration.png",
-  logistics: "/images/products/stretch-film-illustration.png",
+  logistics: "/images/products/stretch-hood-illustration.png",
   factory: "/images/factory/machine-01.jpg",
 };
 
@@ -27,9 +27,9 @@ const products: Product[] = [
   ["PE Bags", "Strong, versatile bags manufactured to your exact size and thickness.", images.rolls],
   ["PE Film Rolls", "Clear and colored polyethylene films for every packaging application.", images.line],
   ["Shrink Film", "Reliable protection and polished presentation for grouped products.", images.warehouse],
-  ["Stretch Film", "High-performance load stability for storage and transport.", images.logistics],
+  ["Stretch Hood", "High-performance load stability for storage and transport.", images.logistics],
   ["Garbage Bags", "Durable, practical solutions for commercial and household use.", images.factory],
-  ["Agricultural Film", "Resilient films engineered for demanding growing conditions.", images.hero],
+  ["Agriculture & Horticulture", "Films that support crop protection and efficient use of growing resources.", "/images/products/agriculture-horticulture-illustration.png"],
   ["Custom Packaging", "Tailored specifications, colors, printing, and finishing.", images.lab],
 ].map(([title, description, image]) => ({ title, description, image }));
 
@@ -37,7 +37,7 @@ export const content: Record<Locale, Copy> = {
   en: {
     brand: "AL DAWLIA", tag: "FOR PLASTIC MATERIALS",
     nav: { home: "Home", about: "About Us", products: "Products", "production-lines": "Production Lines", quality: "Quality", export: "Export", gallery: "Gallery", "request-quote": "Request Quote", contact: "Contact" },
-    hero: { eyebrow: "Egyptian manufacturing excellence", title: "AL DAWLIA FOR\nPLASTIC MATERIALS", text: "High Quality Polyethylene Packaging Solutions", primary: "Explore Products", secondary: "Contact Us" },
+    hero: { eyebrow: "We Make What You Imagine", title: "AL DAWLIA FOR\nPLASTIC MATERIALS", text: "High Quality Polyethylene Packaging Solutions", primary: "Explore Products", secondary: "Contact Us" },
     about: { title: "Engineered to protect. Built to perform.", text: "AL DAWLIA FOR PLASTIC MATERIALS is an Egyptian manufacturer specializing in polyethylene packaging solutions for local and international markets. We combine technical know-how, reliable production, and attentive service to create packaging that works harder for your business." },
     products: { title: "Packaging designed around your needs.", text: "A broad portfolio of polyethylene solutions made with dependable performance, practical detail, and your operation in mind.", items: products },
     production: { title: "Precision at every stage of production.", text: "Our integrated manufacturing process gives us the control to deliver consistent quality, from resin to finished roll or bag.", stages: ["Advanced extrusion lines", "High-definition printing", "Precision cutting & sealing", "Quality inspection", "Secure packaging & dispatch"] },
@@ -52,9 +52,9 @@ export const content: Record<Locale, Copy> = {
   ar: {
     brand: "الدولية", tag: "للمواد البلاستيكية",
     nav: { home: "الرئيسية", about: "عن الشركة", products: "المنتجات", "production-lines": "خطوط الإنتاج", quality: "الجودة", export: "التصدير", gallery: "المعرض", "request-quote": "اطلب عرض سعر", contact: "اتصل بنا" },
-    hero: { eyebrow: "تميز صناعي مصري", title: "الدولية للمواد\nالبلاستيكية", text: "حلول تغليف بولي إيثيلين عالية الجودة", primary: "استكشف المنتجات", secondary: "تواصل معنا" },
+    hero: { eyebrow: "نصنع ما تتخيله", title: "الدولية للمواد\nالبلاستيكية", text: "حلول تغليف بولي إيثيلين عالية الجودة", primary: "استكشف المنتجات", secondary: "تواصل معنا" },
     about: { title: "مصممة للحماية. ومبنية للأداء.", text: "الدولية للمواد البلاستيكية هي شركة مصرية متخصصة في حلول تغليف البولي إيثيلين للأسواق المحلية والدولية. نجمع بين الخبرة التقنية والإنتاج الموثوق والخدمة المتميزة لتقديم تغليف يدعم أعمالك." },
-    products: { title: "تغليف مصمم حسب احتياجاتك.", text: "مجموعة واسعة من حلول البولي إيثيلين بأداء موثوق وتفاصيل عملية تلائم عملياتك.", items: products.map((item, i) => ({ ...item, title: ["أكياس بولي إيثيلين", "رولات فيلم", "شرنك فيلم", "استرتش فيلم", "أكياس قمامة", "أفلام زراعية", "تغليف مخصص"][i], description: "حلول تغليف موثوقة مصممة وفقاً لمتطلباتك." })) },
+    products: { title: "تغليف مصمم حسب احتياجاتك.", text: "مجموعة واسعة من حلول البولي إيثيلين بأداء موثوق وتفاصيل عملية تلائم عملياتك.", items: products.map((item, i) => ({ ...item, title: ["أكياس بولي إيثيلين", "رولات فيلم", "شرنك فيلم", "ستريتش هود", "أكياس قمامة", "أفلام زراعية", "تغليف مخصص"][i], description: "حلول تغليف موثوقة مصممة وفقاً لمتطلباتك." })) },
     production: { title: "دقة في كل مرحلة إنتاج.", text: "تمنحنا عملية التصنيع المتكاملة تحكماً كاملاً لتقديم جودة ثابتة من المادة الخام إلى المنتج النهائي.", stages: ["خطوط بثق متقدمة", "طباعة عالية الدقة", "قص ولحام دقيق", "فحص الجودة", "تعبئة وشحن آمن"] },
     quality: { title: "الجودة في كل طبقة.", text: "نطبق ضوابط وفحوصات دقيقة عبر كل مراحل الإنتاج، حتى يطابق كل طلب المواصفات التي يعتمد عليها شركاؤنا.", checks: ["مواد خام مختارة بعناية", "ضوابط سماكة أثناء الإنتاج", "اختبارات بصرية وميكانيكية", "فحص نهائي قابل للتتبع"] },
     why: { title: "شريك موثوق من المواصفات إلى التسليم.", items: ["جودة فائقة", "تسليم سريع", "جاهزون للتصدير", "تصنيع مخصص", "فريق ذو خبرة", "أسعار تنافسية"] },

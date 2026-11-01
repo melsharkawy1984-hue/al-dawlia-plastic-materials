@@ -17,14 +17,15 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
 import type { Locale } from "@/lib/content";
+import { castProducts } from "@/lib/cast-products";
 
 type GalleryItem = {
     src: string;
     title: string;
-    category: "factory" | "products";
+    category: "factory" | "products" | "cast";
 };
 
-const galleryItems: GalleryItem[] = [{"src": "/images/factory/hero-machine.jpg", "title": "Production Line", "category": "factory"}, {"src": "/images/factory/line-01.jpg", "title": "Film Extrusion Line", "category": "factory"}, {"src": "/images/factory/machine-01.jpg", "title": "Industrial Machinery", "category": "factory"}, {"src": "/images/factory/machine-02.jpg", "title": "Manufacturing Equipment", "category": "factory"}, {"src": "/images/products/pe-bags-illustration.png", "title": "Polyethylene Bags", "category": "products"}, {"src": "/images/products/pe-film-illustration.png", "title": "PE Film Rolls", "category": "products"}, {"src": "/images/products/stretch-film-illustration.png", "title": "Stretch Film", "category": "products"}, {"src": "/images/products/shrink-film-illustration.png", "title": "Shrink Film", "category": "products"}];
+const galleryItems: GalleryItem[] = [{src: "/images/products/agriculture-horticulture-illustration.png", title: "Agriculture & Horticulture", category: "products"}, {"src": "/images/factory/hero-machine.jpg", "title": "Production Line", "category": "factory"}, {"src": "/images/factory/line-01.jpg", "title": "Film Extrusion Line", "category": "factory"}, {"src": "/images/factory/machine-01.jpg", "title": "Industrial Machinery", "category": "factory"}, {"src": "/images/factory/machine-02.jpg", "title": "Manufacturing Equipment", "category": "factory"}, {"src": "/images/products/pe-bags-illustration.png", "title": "Polyethylene Bags", "category": "products"}, {"src": "/images/products/pe-film-illustration.png", "title": "PE Film Rolls", "category": "products"}, {"src": "/images/products/stretch-hood-illustration.png", "title": "Stretch Hood", "category": "products"}, {"src": "/images/products/shrink-film-illustration.png", "title": "Shrink Film", "category": "products"}];
 
 const filters = [
     {
@@ -51,6 +52,7 @@ const filters = [
         },
         icon: Boxes,
     },
+    { id: "cast", label: { en: "Cast Film", ar: "كاست فيلم" }, icon: Boxes },
 ];
 
 const translations = {
@@ -59,7 +61,7 @@ const translations = {
         title: "Factory, Production",
         titleAccent: "& Packaging",
         description:
-            "Explore our factory equipment and illustrative product images created for AL DAWLIA.",
+            "Explore our factory equipment, packaging products and cast film range.",
         factory: "Factory",
         packaging: "Packaging",
         statement: "Quality • Flexibility • Reliability • Global Reach",
@@ -70,7 +72,7 @@ const translations = {
         title: "المصنع والإنتاج",
         titleAccent: "والتغليف",
         description:
-            "شاهد معدات المصنع وصورًا توضيحية للمنتجات أُعدّت خصيصًا للدولية.",
+            "شاهد معدات المصنع ومنتجات التغليف ومجموعة منتجات كاست فيلم.",
         factory: "المصنع",
         packaging: "التغليف",
         statement: "الجودة • المرونة • الموثوقية • الوصول العالمي",
@@ -78,9 +80,10 @@ const translations = {
 };
 
 const arabicTitles: Record<string, string> = {
+"Agriculture & Horticulture": "أفلام الزراعة والبستنة — صورة توضيحية",
 "Polyethylene Bags": "أكياس البولي إيثيلين — صورة توضيحية",
 "PE Film Rolls": "رولات البولي إيثيلين — صورة توضيحية",
-"Stretch Film": "استرتش فيلم — صورة توضيحية",
+"Stretch Hood": "ستريتش هود — صورة توضيحية",
 "Shrink Film": "شرنك فيلم — صورة توضيحية",
     "Production Line": "خط الإنتاج",
     "Film Extrusion Line": "خط بثق الأفلام",
@@ -114,10 +117,12 @@ export default function Gallery({
 
     const t = translations[locale];
 
+    const allItems: GalleryItem[] = [...galleryItems, ...castProducts[locale].map((product) => ({ src: product.image, title: product.title, category: "cast" as const }))];
+
     const filteredItems =
         activeFilter === "all"
-            ? galleryItems
-            : galleryItems.filter(
+            ? allItems
+            : allItems.filter(
                 (item) => item.category === activeFilter
             );
 
@@ -189,6 +194,7 @@ export default function Gallery({
                             <button
                                 key={filter.id}
                                 type="button"
+                                aria-pressed={active}
                                 onClick={() =>
                                     handleFilterChange(filter.id)
                                 }
@@ -236,7 +242,7 @@ export default function Gallery({
                                     <img
                                         src={item.src}
                                         alt={title}
-                                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                                        className={`h-full w-full transition duration-700 group-hover:scale-110 ${item.category === "cast" ? "object-contain bg-white" : "object-cover"}`}
                                     />
 
                                     {/* Image Overlay */}
@@ -254,7 +260,7 @@ export default function Gallery({
                                         <span className="rounded-full border border-white/20 bg-slate-950/60 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-md">
                                             {item.category === "factory"
                                                 ? t.factory
-                                                : t.packaging}
+                                                : item.category === "cast" ? (locale === "ar" ? "كاست فيلم" : "Cast Film") : t.packaging}
                                         </span>
                                     </div>
 

@@ -1,11 +1,10 @@
-import { content, type Locale } from "@/lib/content";
+import { type Locale } from "@/lib/content";
 
 type Props = {
     locale: Locale;
 };
 
 export default function ProductionLines({ locale }: Props) {
-    const t = content[locale];
 
     const lines =
         locale === "ar"
@@ -105,58 +104,52 @@ export default function ProductionLines({ locale }: Props) {
 
                 </div>
 
-                {/* Production Lines */}
-
-                <div className="space-y-24">
-
-                    {lines.map((line, index) => (
-
-                        <div
-                            key={line.title}
-                            data-aos="fade-up"
-                            className={`grid items-center gap-16 lg:grid-cols-2 ${index % 2 === 1
-                                ? "lg:[&>*:first-child]:order-2"
-                                : ""
-                                }`}
-                        >
-
-                            {/* Image */}
-
-                            <div className="group overflow-hidden rounded-[32px] shadow-2xl">
-
-                                <img
-                                    src={line.image}
-                                    alt={line.title}
-                                    className="h-[450px] w-full object-cover transition duration-700 group-hover:scale-105"
-                                />
-
-                            </div>
-
-                            {/* Content */}
-
-                            <div>
-
-                                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-orange-500 text-2xl font-black text-white shadow-lg">
-                                    {index + 1}
-                                </div>
-
-                                <h3 className="text-4xl font-black text-white">
-                                    {line.title}
-                                </h3>
-
-                                <p className="mt-8 text-lg leading-9 text-slate-300">
-                                    {line.description}
-                                </p>
-
-                                <div className="mt-10 h-1 w-28 rounded-full bg-orange-500" />
-
-                            </div>
-
+                {[
+                    {
+                        id: "polyethylene-line",
+                        title: isArabic ? "خط إنتاج أفلام البولي إيثيلين" : "Polyethylene Film Production Line",
+                        stages: lines,
+                    },
+                    {
+                        id: "promea-cast-film",
+                        title: "Promea Cast Film",
+                        stages: (isArabic
+                            ? [
+                                { number: 1, title: "تجهيز الخط", description: "نظرة عامة على تجهيزات خط الكاست." },
+                                { number: 2, title: "تشكيل الفيلم", description: "تشكيل طبقة الفيلم على الأسطوانة." },
+                                { number: 4, title: "مرور الفيلم", description: "انتقال الفيلم عبر مجموعة الأسطوانات." },
+                                { number: 3, title: "لف الرولات", description: "تجميع الفيلم في رولات بعد التشكيل." },
+                            ]
+                            : [
+                                { number: 1, title: "Line Setup", description: "An overview of the cast film equipment." },
+                                { number: 2, title: "Film Forming", description: "Forming the film layer on the roller." },
+                                { number: 4, title: "Film Handling", description: "Guiding the film through the roller assembly." },
+                                { number: 3, title: "Roll Winding", description: "Collecting the formed film into rolls." },
+                            ]).map((stage) => ({ ...stage, image: `/images/factory/promea-cast-film-${stage.number}.jpg` })),
+                    },
+                ].map((series, seriesIndex) => (
+                    <section key={series.id} aria-labelledby={`${series.id}-title`} className={seriesIndex === 0 ? "" : "mt-28 border-t border-white/15 pt-24"}>
+                        <div className="mb-16 text-center">
+                            <span className="text-sm font-bold text-orange-300">{isArabic ? `خط الإنتاج ${seriesIndex + 1}` : `Production Line ${seriesIndex + 1}`}</span>
+                            <h3 id={`${series.id}-title`} className="mt-4 text-3xl font-black text-white md:text-4xl">{series.title}</h3>
                         </div>
-
-                    ))}
-
-                </div>
+                        <div className="space-y-24">
+                            {series.stages.map((stage, index) => (
+                                <div key={stage.title} data-aos="fade-up" className={`grid items-center gap-8 lg:grid-cols-2 lg:gap-16 ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                                    <div className="group overflow-hidden rounded-[32px] shadow-2xl">
+                                        <img src={stage.image} alt={stage.title} loading="lazy" className={`aspect-[3/2] w-full transition duration-700 group-hover:scale-105 ${seriesIndex === 1 ? "bg-white object-contain" : "object-cover"}`} />
+                                    </div>
+                                    <div>
+                                        <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-orange-500 text-2xl font-black text-white shadow-lg">{index + 1}</div>
+                                        <h4 className="text-3xl font-black text-white md:text-4xl">{stage.title}</h4>
+                                        <p className="mt-6 text-lg leading-9 text-slate-300">{stage.description}</p>
+                                        <div className="mt-8 h-1 w-28 rounded-full bg-orange-500" />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                ))}
 
             </div>
         </section>

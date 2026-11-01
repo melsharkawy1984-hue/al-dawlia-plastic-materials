@@ -119,12 +119,12 @@ export default function SiteFooter({ locale = "en" }: Props) {
 
                             <li>
                                 <Link
-                                    href={`/${currentLocale}/products/stretch-film`}
+                                    href={`/${currentLocale}/products/stretch-hood`}
                                     className="transition hover:text-orange-400"
                                 >
                                     {isArabic
-                                        ? "فيلم الاسترتش"
-                                        : "Stretch Film"}
+                                        ? "فيلم ستريتش هود"
+                                        : "Stretch Hood"}
                                 </Link>
                             </li>
 
@@ -139,6 +139,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
                                 </Link>
                             </li>
 
+                            <li><Link href={`/${currentLocale}/products/agriculture-horticulture`} className="transition hover:text-orange-400">{isArabic ? "أفلام الزراعة والبستنة" : "Agriculture & Horticulture"}</Link></li>
                         </ul>
 
                     </div>

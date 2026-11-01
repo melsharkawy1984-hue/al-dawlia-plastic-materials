@@ -134,7 +134,7 @@ export default function ExportSection({ locale }: Props) {
                         <div className="relative overflow-hidden rounded-[32px] shadow-2xl">
 
                             <img
-                                src="/images/products/stretch-film-illustration.png"
+                                src="/images/products/stretch-hood-illustration.png"
                                 alt={
                                     isArabic
                                         ? "تصدير منتجات الدولية"

@@ -1,5 +1,10 @@
+import { castProducts } from "./cast-products";
+
 export type Product = {
     slug: string;
+    category?: "blown" | "cast";
+    imageKind?: "supplied" | "illustration";
+    specificationGroups?: { title: string; specifications: Record<string, string> }[];
     title: string;
     image: string;
     description: string;
@@ -11,12 +16,12 @@ export type Product = {
 const productImages = {
  peBags: "/images/products/pe-bags-illustration.png",
  peFilmRolls: "/images/products/pe-film-illustration.png",
- stretchFilm: "/images/products/stretch-film-illustration.png",
  shrinkFilm: "/images/products/shrink-film-illustration.png",
 };
 
 export const products: Record<"en" | "ar", Product[]> = {
     en: [
+        ...castProducts.en,
         {
             slug: "pe-bags",
             title: "PE Bags",
@@ -34,7 +39,7 @@ export const products: Record<"en" | "ar", Product[]> = {
                 Thickness: "20 – 250 Micron",
                 Width: "100 – 1500 mm",
                 Length: "Custom",
-                Printing: "Up to 8 Colors",
+
                 Colors: "Custom Colors",
                 Packaging: "Rolls / Bundles",
             },
@@ -63,7 +68,7 @@ export const products: Record<"en" | "ar", Product[]> = {
                 Thickness: "25 – 300 Micron",
                 Width: "200 – 2000 mm",
                 Surface: "Smooth",
-                Printing: "Optional",
+
                 Colors: "Transparent / Colored",
                 Packaging: "Rolls",
             },
@@ -75,34 +80,52 @@ export const products: Record<"en" | "ar", Product[]> = {
             ],
         },
 
-        {
-            slug: "stretch-film",
-            title: "Stretch Film",
-            image: productImages.stretchFilm,
-            description:
-                "Excellent load stability for transportation and storage.",
-            features: [
-                "Strong elasticity",
-                "Excellent cling",
-                "Pallet wrapping",
-                "Machine & hand grade",
-            ],
-            specifications: {
-                Material: "LLDPE",
-                Thickness: "17 – 35 Micron",
-                Width: "250 – 500 mm",
-                Stretch: "Up to 300%",
-                Printing: "No",
-                Colors: "Transparent / Black",
-                Packaging: "Rolls",
-            },
-            applications: [
-                "Food Packaging",
-                "Industrial Packaging",
-                "Agriculture",
-                "Retail",
-            ],
-        },
+{
+    "slug": "stretch-hood",
+    "title": "Stretch Hood",
+    "image": "/images/products/stretch-hood-illustration.png",
+    "description": "Stretch hood film secures palletized goods with a snug protective cover, helping limit load movement and protect against weather during transport and storage.",
+    "features": [
+        "Strong load retention",
+        "Tear resistance",
+        "Flexible protective cover",
+        "Weather protection"
+    ],
+    "specifications": {
+        "Application": "Pallet protection",
+        "Thickness and dimensions": "Confirmed to suit the load and equipment",
+        "Technical requirements": "Agreed for each order"
+    },
+    "applications": [
+        "Palletized goods",
+        "Road transport",
+        "Warehousing",
+        "Industrial logistics"
+    ]
+},
+{
+    "slug": "agriculture-horticulture",
+    "title": "Agriculture & Horticulture",
+    "image": "/images/products/agriculture-horticulture-illustration.png",
+    "description": "Agricultural films support more efficient growing conditions, helping conserve moisture, protect crops and improve crop quality while making better use of available resources.",
+    "features": [
+        "Crop protection",
+        "Moisture conservation",
+        "Support for efficient cultivation",
+        "Films suited to the growing environment"
+    ],
+    "specifications": {
+        "Application": "Agriculture and horticulture",
+        "Thickness and dimensions": "Confirmed for the intended application",
+        "Technical requirements": "Agreed according to crop and growing conditions"
+    },
+    "applications": [
+        "Protected cultivation",
+        "Greenhouse covering",
+        "Soil mulching",
+        "Horticulture"
+    ]
+},
 
         {
             slug: "shrink-film",
@@ -121,7 +144,7 @@ export const products: Record<"en" | "ar", Product[]> = {
                 Thickness: "40 – 180 Micron",
                 Width: "200 – 1500 mm",
                 Shrinkage: "Excellent",
-                Printing: "Optional",
+
                 Colors: "Transparent",
                 Packaging: "Rolls",
             },
@@ -135,6 +158,7 @@ export const products: Record<"en" | "ar", Product[]> = {
     ],
 
     ar: [
+        ...castProducts.ar,
         {
             slug: "pe-bags",
             title: "أكياس البولي إيثيلين",
@@ -152,7 +176,7 @@ export const products: Record<"en" | "ar", Product[]> = {
                 "السماكة": "20 – 250 ميكرون",
                 "العرض": "100 – 1500 مم",
                 "الطول": "حسب الطلب",
-                "الطباعة": "حتى 8 ألوان",
+
                 "الألوان": "ألوان حسب الطلب",
                 "التعبئة": "رولات / حزم",
             },
@@ -181,7 +205,7 @@ export const products: Record<"en" | "ar", Product[]> = {
                 "السماكة": "25 – 300 ميكرون",
                 "العرض": "200 – 2000 مم",
                 "السطح": "ناعم",
-                "الطباعة": "اختيارية",
+
                 "الألوان": "شفاف / ملون",
                 "التعبئة": "رولات",
             },
@@ -193,34 +217,52 @@ export const products: Record<"en" | "ar", Product[]> = {
             ],
         },
 
-        {
-            slug: "stretch-film",
-            title: "استرتش فيلم",
-            image: productImages.stretchFilm,
-            description:
-                "فيلم استرتش عالي الأداء يوفر ثباتاً ممتازاً للحمولات أثناء التخزين والنقل.",
-            features: [
-                "مرونة عالية",
-                "التصاق ممتاز",
-                "مناسب لتغليف البالتات",
-                "متوفر للاستخدام اليدوي والآلي",
-            ],
-            specifications: {
-                "الخامة": "LLDPE",
-                "السماكة": "17 – 35 ميكرون",
-                "العرض": "250 – 500 مم",
-                "نسبة التمدد": "حتى 300%",
-                "الطباعة": "غير متوفرة",
-                "الألوان": "شفاف / أسود",
-                "التعبئة": "رولات",
-            },
-            applications: [
-                "تغليف المواد الغذائية",
-                "التغليف الصناعي",
-                "الزراعة",
-                "قطاع التجزئة",
-            ],
-        },
+{
+    "slug": "stretch-hood",
+    "title": "فيلم ستريتش هود",
+    "image": "/images/products/stretch-hood-illustration.png",
+    "description": "غطاء فيلم مرن يثبت البضائع على البالتات ويساعد على تقليل تحرك الحمولة وحمايتها من العوامل الجوية أثناء النقل والتخزين، مع قوة تماسك ومقاومة للتمزق.",
+    "features": [
+        "قوة تثبيت للحمولة",
+        "مقاومة للتمزق",
+        "غطاء مرن يحيط بالبالتة",
+        "حماية من العوامل الجوية"
+    ],
+    "specifications": {
+        "الاستخدام": "حماية البضائع على البالتات",
+        "السماكة والأبعاد": "تُحدد وفقًا للحمولة ومعدات التغليف",
+        "المتطلبات الفنية": "تُعتمد لكل طلب"
+    },
+    "applications": [
+        "البضائع على البالتات",
+        "النقل البري",
+        "التخزين",
+        "الخدمات اللوجستية الصناعية"
+    ]
+},
+{
+    "slug": "agriculture-horticulture",
+    "title": "أفلام الزراعة والبستنة",
+    "image": "/images/products/agriculture-horticulture-illustration.png",
+    "description": "أفلام زراعية تساعد على تهيئة ظروف نمو أفضل، والحفاظ على رطوبة التربة وحماية المحاصيل، بما يدعم كفاءة استخدام الموارد وتحسين جودة الإنتاج الزراعي.",
+    "features": [
+        "حماية المحاصيل",
+        "الحفاظ على رطوبة التربة",
+        "دعم كفاءة الزراعة",
+        "أفلام تناسب بيئة النمو"
+    ],
+    "specifications": {
+        "الاستخدام": "الزراعة والبستنة",
+        "السماكة والأبعاد": "تُحدد حسب الاستخدام المطلوب",
+        "المتطلبات الفنية": "تُعتمد وفقًا للمحصول وظروف الزراعة"
+    },
+    "applications": [
+        "الزراعة المحمية",
+        "تغطية الصوب الزراعية",
+        "تغطية التربة",
+        "البستنة"
+    ]
+},
 
         {
             slug: "shrink-film",
@@ -239,7 +281,7 @@ export const products: Record<"en" | "ar", Product[]> = {
                 "السماكة": "40 – 180 ميكرون",
                 "العرض": "200 – 1500 مم",
                 "الانكماش": "ممتاز",
-                "الطباعة": "اختيارية",
+
                 "الألوان": "شفاف",
                 "التعبئة": "رولات",
             },
