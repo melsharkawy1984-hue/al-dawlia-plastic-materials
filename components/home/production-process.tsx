@@ -1,7 +1,6 @@
 import {
     Package,
     Factory,
-    Printer,
     Scissors,
     Boxes,
     Ship,
@@ -28,14 +27,6 @@ const steps = {
             title: "Film Extrusion",
             description:
                 "Advanced Italian extrusion lines ensure uniform thickness, consistent quality, and reliable performance.",
-        },
-        {
-            icon: Printer,
-            image: "/images/process/printing.jpg",
-            title: "Printing",
-            comingSoon: true,
-            description:
-                "High-resolution printing with vibrant colors and durable ink technology.",
         },
         {
             icon: Scissors,
@@ -74,14 +65,6 @@ const steps = {
             title: "بثق الفيلم البلاستيكي",
             description:
                 "خطوط بثق إيطالية متطورة تضمن انتظام السماكة وجودة المنتج وثبات الأداء.",
-        },
-        {
-            icon: Printer,
-            image: "/images/process/printing.jpg",
-            title: "الطباعة",
-            comingSoon: true,
-            description:
-                "طباعة عالية الدقة بألوان زاهية وتقنيات أحبار متطورة لضمان جودة وثبات الطباعة.",
         },
         {
             icon: Scissors,
@@ -218,20 +201,6 @@ export default function ProductionProcess({
                                                 />
 
                                                 {step.image.includes("illustration") && <span className="absolute bottom-2 start-2 rounded bg-slate-950/80 px-2 py-1 text-xs text-white">{isArabic ? "صورة توضيحية" : "Illustrative image"}</span>}
-                                                {/* Coming Soon */}
-
-                                                {step.comingSoon && (
-                                                    <div
-                                                        className={`absolute top-5 rounded-full bg-orange-500 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-lg ${isArabic
-                                                                ? "right-5"
-                                                                : "left-5"
-                                                            }`}
-                                                    >
-                                                        {isArabic
-                                                            ? "قريبًا"
-                                                            : "Coming Soon"}
-                                                    </div>
-                                                )}
 
                                             </div>
 

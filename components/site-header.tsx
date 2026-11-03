@@ -17,11 +17,11 @@ export function SiteHeader() {
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 60);
+      setScrolled(window.scrollY > 4);
     };
 
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScroll);
@@ -30,7 +30,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     setOpen(false);
-    setScrolled(window.scrollY > 60);
+    setScrolled(window.scrollY > 4);
   }, [pathname]);
 
   /*
@@ -92,16 +92,25 @@ export function SiteHeader() {
       title: isArabic ? "المعرض" : "Gallery",
       href: `/${locale}/gallery`,
     },
+    { title: isArabic ? "الوظائف" : "Careers", href: `/${locale}/careers` },
   ];
 
   return (
     <header
       dir={isArabic ? "rtl" : "ltr"}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-[#FCFCF7]/95 py-4 shadow-xl backdrop-blur-md"
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,padding,box-shadow] duration-150 ${scrolled
+          ? "bg-[#FCFCF7] py-4 shadow-xl"
           : "bg-transparent py-6"
         }`}
     >
+      <svg width="0" height="0" aria-hidden="true" className="absolute pointer-events-none">
+        <defs>
+          <filter id="logo-remove-navy" colorInterpolationFilters="sRGB">
+            {/* Keep the original white/green artwork and make its navy background transparent. */}
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 4 0 0 -1.1" />
+          </filter>
+        </defs>
+      </svg>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
 
         {/* =========================
@@ -110,12 +119,17 @@ export function SiteHeader() {
 
         <Link
           href={`/${locale}`}
-          className="flex items-center gap-3"
+          className="flex shrink-0 items-center gap-3"
           onClick={() => setOpen(false)}
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 text-xl font-black text-white shadow-lg">
-            AD
-          </div>
+          <img
+            src={scrolled ? "/images/brand/aldawlia-logo.png" : "/images/brand/aldawlia-logo-dark.png"}
+            alt={isArabic ? "شعار الدولية" : "AL DAWLIA logo"}
+            width={575}
+            height={271}
+            className="h-auto w-20 shrink-0 rounded-md object-contain md:w-24"
+            style={scrolled ? undefined : { filter: "url(#logo-remove-navy)" }}
+          />
 
           <div>
             <h2
@@ -142,7 +156,7 @@ export function SiteHeader() {
                     DESKTOP MENU
                 ========================= */}
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-4 xl:gap-6 xl:flex">
 
           {links.map((item) => (
             <Link
@@ -163,7 +177,7 @@ export function SiteHeader() {
                     DESKTOP BUTTONS
                 ========================= */}
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 xl:flex">
 
           {/* Language */}
 
@@ -204,7 +218,7 @@ export function SiteHeader() {
               : "Open menu"
           }
           aria-expanded={open}
-          className={`lg:hidden transition ${scrolled
+          className={`xl:hidden transition ${scrolled
               ? "text-slate-900"
               : "text-white"
             }`}
@@ -224,7 +238,7 @@ export function SiteHeader() {
 
       {open && (
         <div
-          className={`lg:hidden bg-[#FCFCF7] shadow-2xl ${isArabic
+          className={`xl:hidden bg-[#FCFCF7] shadow-2xl ${isArabic
               ? "text-right"
               : "text-left"
             }`}

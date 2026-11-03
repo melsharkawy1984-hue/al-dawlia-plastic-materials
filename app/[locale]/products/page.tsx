@@ -71,6 +71,7 @@ export default async function ProductsPage({ params }: Props) {
                                 <img
                                     src={product.image}
                                     alt={product.title}
+                                    style={product.slug === "textile-backsheet" ? { clipPath: "inset(0 2px)" } : undefined}
                                     className={`h-64 w-full transition duration-500 group-hover:scale-105 ${product.category === "cast" ? "object-contain bg-white" : "object-cover"}`}
                                 />
 

@@ -2,10 +2,18 @@
 import { FormEvent, useState } from "react";
 import type { Locale } from "@/lib/content";
 
-export default function ContactForm({ locale, product = "" }: { locale: Locale; product?: string }) {
+export default function ContactForm({ locale, product = "", careers = false }: { locale: Locale; product?: string; careers?: boolean }) {
   const ar = locale === "ar";
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const fields = [
+  const fields = careers ? [
+    ["contactPerson", ar ? "الاسم الكامل" : "Full name", "text"],
+    ["email", ar ? "البريد الإلكتروني" : "Email", "email"],
+    ["phone", ar ? "رقم الهاتف" : "Phone", "tel"],
+    ["country", ar ? "المدينة / الدولة" : "City / Country", "text"],
+    ["position", ar ? "الوظيفة أو التخصص المطلوب" : "Position or area of interest", "text"],
+    ["experience", ar ? "الخبرة المهنية" : "Professional experience", "text"],
+    ["cvUrl", ar ? "رابط السيرة الذاتية (اختياري)" : "CV link (optional)", "url"],
+  ] : [
     ["company", ar ? "اسم الشركة" : "Company", "text"],
     ["contactPerson", ar ? "اسم مسؤول الاتصال" : "Contact name", "text"],
     ["email", ar ? "البريد الإلكتروني" : "Email", "email"],
@@ -34,11 +42,32 @@ export default function ContactForm({ locale, product = "" }: { locale: Locale; 
   return <form name="sales-enquiry" method="POST" action="/__forms.html" onSubmit={submit} className="space-y-6">
     <input type="hidden" name="form-name" value="sales-enquiry" />
     <input type="hidden" name="locale" value={locale} />
+    <input type="hidden" name="requestType" value={careers ? "Career application / طلب توظيف" : "Sales enquiry / طلب عرض سعر"} />
     <p hidden><label>Leave empty<input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
-    <div className="grid gap-6 md:grid-cols-2">{fields.map(([name,label,type]) => <label key={name} className="block text-sm font-semibold text-slate-900" htmlFor={`contact-${name}`}>{label}{["contactPerson","email"].includes(name) ? " *" : ""}<input id={`contact-${name}`} name={name} type={type} required={["contactPerson","email"].includes(name)} maxLength={250} defaultValue={name === "product" ? product : undefined} className="form-field" /></label>)}</div>
-    <label htmlFor="contact-message" className="block text-sm font-semibold text-slate-900">{ar ? "رسالتك" : "Message"} *<textarea id="contact-message" name="message" required maxLength={5000} className="form-field min-h-[150px]" /></label>
+    <div className="grid gap-6 md:grid-cols-2">{fields.map(([name,label,type]) => <label key={name} className="block text-sm font-semibold text-slate-900" htmlFor={`contact-${name}`}>{label}{["contactPerson","email", ...(careers ? ["phone", "position"] : [])].includes(name) ? " *" : ""}<input id={`contact-${name}`} name={name} type={type} required={["contactPerson","email", ...(careers ? ["phone", "position"] : [])].includes(name)} maxLength={250} defaultValue={name === "product" ? product : undefined} className="form-field" /></label>)}</div>
+    <div className="grid gap-6 md:grid-cols-2">
+      <label htmlFor="contact-heard-from" className="block text-sm font-semibold text-slate-900">
+        {ar ? "من أي منصة عرفت عنا؟" : "How did you hear about us?"}
+        <select id="contact-heard-from" name="heardFrom" defaultValue="" className="form-field">
+          <option value="">{ar ? "اختر المنصة (اختياري)" : "Select a source (optional)"}</option>
+          <option value="Google">{ar ? "بحث جوجل" : "Google search"}</option>
+          <option value="Facebook">{ar ? "فيسبوك" : "Facebook"}</option>
+          <option value="Instagram">{ar ? "إنستغرام" : "Instagram"}</option>
+          <option value="LinkedIn">{ar ? "لينكدإن" : "LinkedIn"}</option>
+          <option value="WhatsApp">{ar ? "واتساب" : "WhatsApp"}</option>
+          <option value="Recommendation">{ar ? "ترشيح من شخص" : "Personal recommendation"}</option>
+          <option value="Other">{ar ? "مصدر آخر" : "Other"}</option>
+        </select>
+      </label>
+      <label htmlFor="contact-heard-from-details" className="block text-sm font-semibold text-slate-900">
+        {ar ? "تفاصيل المصدر (اختياري)" : "Source details (optional)"}
+        <input id="contact-heard-from-details" name="heardFromDetails" type="text" maxLength={250} className="form-field" />
+      </label>
+    </div>
+    <label htmlFor="contact-message" className="block text-sm font-semibold text-slate-900">{careers ? (ar ? "نبذة عنك ولماذا ترغب في الانضمام إلينا" : "Tell us about yourself and why you would like to join us") : (ar ? "رسالتك" : "Message")} *<textarea id="contact-message" name="message" required maxLength={5000} className="form-field min-h-[150px]" /></label>
+    {careers && <p className="text-sm leading-6 text-slate-600">{ar ? "يمكنك إضافة رابط لسيرتك الذاتية مع التأكد من إمكانية فتحه. سنستخدم بياناتك لمراجعة طلب التوظيف والتواصل معك بشأنه." : "You may include a link to your CV; please ensure it can be opened. We use your details to review your application and contact you about it."}</p>}
     <p className="text-sm leading-6 text-slate-600">{ar ? "سنستخدم بياناتك للرد على طلبك، ونسجّل مصدر الزيارة إن توفر لتحسين خدماتنا." : "We use your details to respond to your enquiry and record the visit source, when available, to improve our service."}</p>
-    <button type="submit" disabled={status === "sending"} className="button-primary disabled:opacity-60">{status === "sending" ? (ar ? "جارٍ الإرسال…" : "Sending…") : (ar ? "إرسال الطلب" : "Send enquiry")}</button>
-    <p role="status" aria-live="polite" className="text-sm leading-7 text-slate-900">{status === "success" ? (ar ? "تم استلام طلبك. سنتواصل معك قريبًا." : "Your enquiry has been received. We will contact you soon.") : status === "error" ? (ar ? "تعذّر إرسال الطلب. حاول مجددًا أو تواصل معنا عبر البريد أو واتساب." : "Unable to send. Please try again or contact us by email or WhatsApp.") : ""}</p>
+    <button type="submit" disabled={status === "sending"} className="button-primary disabled:opacity-60">{status === "sending" ? (ar ? "جارٍ الإرسال…" : "Sending…") : (careers ? (ar ? "إرسال طلب التوظيف" : "Submit application") : (ar ? "إرسال الطلب" : "Send enquiry"))}</button>
+    <p role="status" aria-live="polite" className="text-sm leading-7 text-slate-900">{status === "success" ? (careers ? (ar ? "تم استلام طلب التوظيف. سنتواصل معك عند توفر فرصة مناسبة." : "Your application has been received. We will contact you if a suitable opportunity is available.") : (ar ? "تم استلام طلبك. سنتواصل معك قريبًا." : "Your enquiry has been received. We will contact you soon.")) : status === "error" ? (ar ? "تعذّر إرسال الطلب. حاول مجددًا أو تواصل معنا عبر البريد أو واتساب." : "Unable to send. Please try again or contact us by email or WhatsApp.") : ""}</p>
   </form>;
 }

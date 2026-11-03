@@ -153,7 +153,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
                         </h4>
 
                         <ul className="space-y-4 text-slate-400">
-
+                            <li><Link href={`/${currentLocale}/careers`} className="transition hover:text-orange-400">{isArabic ? "الوظائف — انضم إلينا" : "Careers — Join us"}</Link></li>
                             <li>
                                 <Link
                                     href={`/${currentLocale}`}
@@ -215,14 +215,14 @@ export default function SiteFooter({ locale = "en" }: Props) {
                             {/* Phone */}
                             {/* Phone */}
                             <a
-                                href="tel:+2010975131375"
+                                href="tel:+201097513175"
                                 className="flex gap-3 transition hover:text-orange-400"
                                 dir="ltr"
                             >
                                 <Phone className="mt-1 h-5 w-5 shrink-0 text-orange-400" />
 
                                 <span>
-                                    +2010975131375
+                                    +201097513175
                                 </span>
                             </a>
 
@@ -246,7 +246,7 @@ export default function SiteFooter({ locale = "en" }: Props) {
 
                             {/* WhatsApp */}
                             <a
-                                href="https://wa.me/2010975131375"
+                                href="https://wa.me/201097513175"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="rounded-full bg-[#FCFCF7]/10 p-3 transition hover:bg-orange-500"
