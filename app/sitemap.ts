@@ -3,7 +3,7 @@ import { sections } from "@/lib/sections";
 import { getProducts } from "@/lib/products";
 
 const baseUrl = "https://aldawliaplastic.com";
-const pages = ["", ...sections.map((section) => `/${section.slug}`), "/request-quote"];
+const pages = ["", ...sections.map((section) => `/${section.slug}`), "/request-quote", "/careers"];
 const products = getProducts("en").map((product) => product.slug);
 
 export default function sitemap(): MetadataRoute.Sitemap {

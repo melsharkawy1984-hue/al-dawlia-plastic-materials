@@ -23,7 +23,7 @@ export default function CTA({ locale }: Props) {
 
                 <p className="mt-8 text-xl leading-9 text-orange-100">
                     {isArabic
-                        ? "تواصل مع الدولية للمواد البلاستيكية اليوم واحصل على عرض سعر مخصص لاحتياجاتك من منتجات تغليف البولي إيثيلين."
+                        ? "تواصل مع الدولية لخامات البلاستيك اليوم واحصل على عرض سعر مخصص لاحتياجاتك من منتجات تغليف البولي إيثيلين."
                         : "Contact AL DAWLIA FOR PLASTIC MATERIALS today and receive a customized quotation for your polyethylene packaging requirements."}
                 </p>
 

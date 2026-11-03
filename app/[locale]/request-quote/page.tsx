@@ -152,11 +152,11 @@ export default async function RequestQuotePage({
                                     </p>
 
                                     <a
-                                        href="https://wa.me/2010975131375"
+                                        href="https://wa.me/201097513175"
                                         dir="ltr"
                                         className="mt-2 block font-semibold text-slate-700"
                                     >
-                                        +2010975131375
+                                        +201097513175
                                     </a>
 
                                 </div>
@@ -168,7 +168,7 @@ export default async function RequestQuotePage({
                                     </p>
 
                                     <a
-                                        href="https://wa.me/2010975131375"
+                                        href="https://wa.me/201097513175"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-2 block font-semibold text-green-600"
@@ -193,7 +193,7 @@ export default async function RequestQuotePage({
                             </p>
 
                             <Link
-                                href="https://wa.me/2010975131375"
+                                href="https://wa.me/201097513175"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-8 inline-block rounded-xl bg-[#FCFCF7] px-6 py-4 font-bold text-orange-500"

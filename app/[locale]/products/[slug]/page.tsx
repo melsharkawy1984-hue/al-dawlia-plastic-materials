@@ -101,7 +101,7 @@ export default async function ProductDetails({ params }: Props) {
                             </Link>
 
                             <a
-                                href="https://wa.me/2010975131375"
+                                href="https://wa.me/201097513175"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="button-ghost"

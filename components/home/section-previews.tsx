@@ -4,7 +4,7 @@ import type { Locale } from "@/lib/content";
 import { sections } from "@/lib/sections";
 
 const images: Record<typeof sections[number]["slug"], { src: string; ar: string; en: string }> = {
-  about: { src: "/images/factory/hero-machine.jpg", ar: "مصنع الدولية للمواد البلاستيكية", en: "AL DAWLIA plastic materials factory" },
+  about: { src: "/images/factory/hero-machine.jpg", ar: "مصنع الدولية لخامات البلاستيك", en: "AL DAWLIA plastic materials factory" },
   "why-choose-us": { src: "/images/factory/machine-01.jpg", ar: "معدات تصنيع الدولية", en: "AL DAWLIA manufacturing equipment" },
   products: { src: "/images/products/pe-film-illustration.png", ar: "رولات فيلم البولي إيثيلين", en: "Polyethylene film rolls" },
   "production-process": { src: "/images/process/extrusion.jpg", ar: "مرحلة بثق أفلام البولي إيثيلين", en: "Polyethylene film extrusion" },

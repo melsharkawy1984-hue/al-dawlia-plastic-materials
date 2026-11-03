@@ -19,7 +19,7 @@ export default function Hero({ locale }: HeroProps) {
                 src="/images/factory/hero-machine.jpg"
                 alt={
                     isArabic
-                        ? "مصنع الدولية للمواد البلاستيكية"
+                        ? "مصنع الدولية لخامات البلاستيك"
                         : "AL DAWLIA Factory"
                 }
                 className="absolute inset-0 h-full w-full object-cover"
@@ -53,9 +53,9 @@ export default function Hero({ locale }: HeroProps) {
                         <h1 className="mt-8 text-5xl font-black leading-[1.05] tracking-tight text-white md:text-7xl">
                             {isArabic ? (
                                 <>
-                                    الدولية للمواد
+                                    الدولية لخامات
                                     <span className="mt-2 block text-orange-400">
-                                        البلاستيكية
+                                        البلاستيك
                                     </span>
                                 </>
                             ) : (
@@ -71,7 +71,7 @@ export default function Hero({ locale }: HeroProps) {
                         {/* Description */}
                         <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
                             {isArabic
-                                ? "الدولية للمواد البلاستيكية تقدم حلول تغليف عالية الجودة من البولي إيثيلين للأسواق المحلية والدولية، باستخدام أحدث تقنيات الإنتاج الإيطالية ومعايير صارمة لضمان الجودة."
+                                ? "الدولية لخامات البلاستيك تقدم حلول تغليف عالية الجودة من البولي إيثيلين للأسواق المحلية والدولية، باستخدام أحدث تقنيات الإنتاج الإيطالية ومعايير صارمة لضمان الجودة."
                                 : "AL DAWLIA FOR PLASTIC MATERIALS manufactures premium polyethylene packaging solutions for local and international markets using advanced Italian production technology and strict quality standards."}
                         </p>
 

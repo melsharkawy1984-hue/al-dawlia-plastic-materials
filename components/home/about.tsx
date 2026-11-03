@@ -25,7 +25,7 @@ export default function About({ locale }: AboutProps) {
                             src="/images/factory/hero-machine.jpg"
                             alt={
                                 isArabic
-                                    ? "مصنع الدولية للمواد البلاستيكية"
+                                    ? "مصنع الدولية لخامات البلاستيك"
                                     : "AL DAWLIA Factory"
                             }
                             className="h-full w-full rounded-3xl object-cover shadow-2xl"
